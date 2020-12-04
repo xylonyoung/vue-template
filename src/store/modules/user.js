@@ -1,6 +1,6 @@
 import $api from '@/api'
 const state = {
-  token: '',
+  token: null,
   user: {},
   registered: false,
 }
@@ -19,13 +19,13 @@ const mutations = {
 
 const actions = {
   // user register
-  register({ commit }, userInfo) {
+  register(userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
       $api.user
         .register({ username: username.trim(), password: password })
         .then(response => {
-          resolve()
+          resolve(response)
         })
         .catch(error => {
           reject(error)
@@ -42,7 +42,7 @@ const actions = {
         .then(response => {
           const { data } = response
           commit('SET_TOKEN', data)
-          setToken(data)
+          localStorage.setItem('token', data)
           resolve()
         })
         .catch(error => {
@@ -58,15 +58,7 @@ const actions = {
         .get(state.token)
         .then(response => {
           const { data } = response
-
-          if (!data) {
-            return reject('Verification failed, please Login again.')
-          }
-
-          const { name, avatar } = data
-
-          commit('SET_NAME', name)
-          commit('SET_AVATAR', avatar)
+          commit('SET_USER', data)
           resolve(data)
         })
         .catch(error => {
@@ -76,11 +68,9 @@ const actions = {
   },
 
   // user logout
-  logout({ commit, state }) {
-    return new Promise((resolve, reject) => {
-      removeToken() // must remove  token  first
-      resetRouter()
-      commit('RESET_STATE')
+  logout() {
+    return new Promise(resolve => {
+      localStorage.removeItem('token')
       resolve()
     })
   },
