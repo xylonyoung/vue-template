@@ -1,13 +1,15 @@
 <template>
-  <el-container>
-    <el-header><navbar /></el-header>
-    <el-main>
+  <div class="layout-container">
+    <header><navbar /></header>
+    <main>
       <keep-alive :include="cachedViews">
         <router-view :key="key" />
       </keep-alive>
-    </el-main>
-    <el-footer><nav-footer /></el-footer>
-  </el-container>
+    </main>
+    <footer>
+      <nav-footer />
+    </footer>
+  </div>
 </template>
 <script>
 import Navbar from './components/navbar'
@@ -27,4 +29,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  header {
+    height: 100px;
+  }
+  footer {
+    height: 100px;
+    margin-top: auto;
+  }
+}
 </style>

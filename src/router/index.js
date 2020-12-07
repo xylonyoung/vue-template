@@ -16,19 +16,6 @@ const routes = [
     hidden: true,
   },
   {
-    path: '/',
-    name: 'Home',
-    component: Layout,
-    children: [
-      {
-        path: '/',
-        component: () => import('@/views/home/home'),
-        name: 'home',
-        meta: { title: 'home'}
-      }
-    ]
-  },
-  {
     path: '/login',
     name: 'Login',
     component: () => import('@/views/login/login'),
@@ -42,6 +29,28 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: () => import('@/views/login/register'),
+  },
+  {
+    path: '/',
+    name: 'Home',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        component: () => import('@/views/home/home'),
+      },
+    ],
+  },
+  {
+    path: '/about-us',
+    name: 'AboutUs',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        component: () => import('@/views/about-us/about-us'),
+      },
+    ],
   },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true },
