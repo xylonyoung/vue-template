@@ -3,13 +3,13 @@ export default {
     success: 'success',
   },
   navbar:{
-    home:'home',
-    aboutUs:'aboutUs',
-    ship:'ship',
-    recommendation:'recommendation',
-    news:'news',
-    partner:'partner',
-    contact:'contact'
+    home:'Home',
+    aboutUs:'About Us',
+    ship:'Shipping',
+    recommendation:'Recommendation',
+    news:'News',
+    partner:'Partner',
+    contact:'Contact'
   },
   home:{
     login:'Login',
