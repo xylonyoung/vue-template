@@ -55,6 +55,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .navbar-container {
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

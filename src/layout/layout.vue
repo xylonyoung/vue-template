@@ -33,11 +33,8 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  header {
-    height: 100px;
-  }
+
   footer {
-    height: 100px;
     margin-top: auto;
   }
 }
