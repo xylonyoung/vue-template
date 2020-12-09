@@ -25,6 +25,33 @@ export default {
       return this.$route.path
     },
   },
+  beforeMount() {
+    window.addEventListener('resize', this.resizeHandler)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.resizeHandler)
+  },
+  mounted() {
+    this.resizeHandler()
+  },
+  methods: {
+    resizeHandler() {
+      if (!document.hidden) {
+        const isMobile = document.documentElement.clientWidth < 1226
+        const container = document.getElementsByClassName('main-container')
+        this.$store.dispatch('app/mobileDevice', isMobile)
+        if (isMobile) {
+          container.forEach(e => {
+            e.style.width = '100%'
+          })
+        } else {
+          container.forEach(e => {
+            e.style.width = '1226px'
+          })
+        }
+      }
+    },
+  },
 }
 </script>
 
@@ -33,9 +60,11 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
   footer {
     margin-top: auto;
+  }
+  .main-container {
+    margin: 0 auto;
   }
 }
 </style>

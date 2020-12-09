@@ -1,14 +1,14 @@
 import { getLanguage } from '@/lang/index'
 
 const state = {
-  device: 'desktop',
+  mobile: false,
   language: getLanguage(),
-  cachedViews: []
+  cachedViews: [],
 }
 
 const mutations = {
-  TOGGLE_DEVICE: (state, device) => {
-    state.device = device
+  MOBILE_DEVICE: (state, isMobile) => {
+    state.mobile = isMobile
   },
   SET_LANGUAGE: (state, language) => {
     state.language = language
@@ -17,8 +17,8 @@ const mutations = {
 }
 
 const actions = {
-  toggleDevice({ commit }, device) {
-    commit('TOGGLE_DEVICE', device)
+  mobileDevice({ commit }, isMobile) {
+    commit('MOBILE_DEVICE', isMobile)
   },
   setLanguage({ commit }, language) {
     commit('SET_LANGUAGE', language)

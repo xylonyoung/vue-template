@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="main-container">
     <el-carousel height="300px">
       <el-carousel-item v-for="item in 3" :key="item">
         <el-image :src="require('@/assets/temp/carousel.jpg')"></el-image>
@@ -136,9 +136,9 @@ export default {
 }
 .login {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 30px 10%;
   background-color: #f5f5f5;
   .login-btn + .login-btn {
     margin-top: 10px;
@@ -153,16 +153,14 @@ export default {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 500px;
-    margin-left: 100px;
+    width: 70%;
     &:before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: -100px;
-      width: 90px;
-      border-top: 2px solid #a6a6a6;
-      transform: translate3d(0, -1px, 0) rotate(90deg);
+      top: calc((90px - 100%) / -2);
+      left: calc((100% / 0.7 - 100% - 120px) / -2);
+      height: 90px;
+      border-left: 2px solid #a6a6a6;
     }
     .count-to {
       position: relative;
@@ -184,18 +182,17 @@ export default {
 }
 .view-more {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
+  padding: 30px 10%;
   .item + .item {
     position: relative;
-    margin-left: 50px;
     &:before {
       content: '';
       position: absolute;
       top: 0;
-      left: -25px;
-      height: 220px;
+      left: calc((1226px * 0.8 - 120px * 4) / 3 / -2);
+      height: 100%;
       border-left: 1px solid #eee;
     }
   }
@@ -204,16 +201,12 @@ export default {
     flex-direction: column;
     align-items: center;
     .name {
-      padding-top: 10px;
+      padding: 10px 0;
       font-size: 16px;
       font-weight: bold;
     }
     .el-image {
       width: 120px;
-    }
-    .el-button {
-      width: 80%;
-      margin: 20px;
     }
   }
 }
@@ -221,7 +214,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
   .title {
     display: flex;
@@ -248,10 +241,13 @@ export default {
   }
   .el-button {
     color: #ffc702;
+    &:hover {
+      color: #fff;
+    }
   }
 }
 .hot-sale {
-  padding: 20px 100px 50px;
+  padding: 20px 10% 50px;
   background-color: #f5f5f5;
   .items {
     display: grid;
@@ -267,7 +263,7 @@ export default {
   }
 }
 .partnership {
-  padding: 20px 100px 50px;
+  padding: 20px 10%;
   .images {
     display: grid;
     grid-template-columns: repeat(4, 25%);
@@ -276,9 +272,9 @@ export default {
     .logo {
       width: 90%;
       height: 90px;
-      margin-top: 10px;
+      margin-bottom: 20px;
       border: 1px solid #e1e1e1;
-      .el-image{
+      .el-image {
         width: 100%;
         height: 100%;
       }

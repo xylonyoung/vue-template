@@ -1,11 +1,17 @@
 <template>
-  <div class="navbar-container">
+  <div class="navbar-container" :class="mobile ? 'navbar-mobile' : ''">
+    <i
+      class="el-icon-s-unfold"
+      v-if="mobile"
+      style="font-size: 30px"
+      @click="drawer = true"
+    ></i>
     <el-image
       :src="require('@/assets/long-logo.png')"
       fit="contain"
-      class="logo"
+      :style="logoStyle"
     ></el-image>
-    <div class="nav-list">
+    <div class="nav-list" v-if="!mobile">
       <el-menu
         :default-active="activeIndex"
         mode="horizontal"
@@ -21,15 +27,32 @@
         </el-menu-item>
       </el-menu>
     </div>
-
     <lang-selector />
+    <el-drawer :visible.sync="drawer" direction="ltr" :show-close="false">
+      <el-menu
+        :default-active="activeIndex"
+        mode="vertical"
+        @select="handleSelect"
+        active-text-color="#ffc702"
+      >
+        <el-menu-item
+          :index="index.toString()"
+          v-for="(item, index) in pages"
+          :key="index"
+        >
+          {{ item.name }}
+        </el-menu-item>
+      </el-menu>
+    </el-drawer>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import LangSelector from '@/components/lang-selector/lang-selector.vue'
 export default {
   components: { LangSelector },
   computed: {
+    ...mapGetters(['mobile']),
     activeIndex() {
       return this.pages.findIndex(e => e.link === location.pathname).toString()
     },
@@ -44,10 +67,23 @@ export default {
         { name: this.$t('navbar.contact'), link: '/contact' },
       ]
     },
+    logoStyle() {
+      if (this.mobile) {
+        return 'width: 220px; height: 70px'
+      } else {
+        return 'width: 220px; height: 100px'
+      }
+    },
+  },
+  data() {
+    return {
+      drawer: false,
+    }
   },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath)
+      this.drawer = false
       this.$router.push(this.pages[key].link)
     },
   },
@@ -60,9 +96,9 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.logo {
-  width: 200px;
-  height: 100px;
+.navbar-mobile {
+  height: 90px;
+  justify-content: space-around;
 }
 .nav-list {
   margin: 0 30px;
