@@ -1,6 +1,10 @@
 export default {
   base: {
     success: '成功',
+    submit: '确定',
+    reset: '重置',
+    select: '请选择',
+    input: '请输入',
   },
   login: {
     title: '账号登录',
@@ -19,18 +23,32 @@ export default {
     partner: '合作商家',
     contact: '联系我们',
   },
-  home:{
-    login:'会员登录',
-    register:'注册账号',
-    packages:'累计运送',
-    cooperation:'合作企业',
-    projects:'成功项目',
-    viewMore:'点击查看',
-    ocean:'超值海运流程',
-    air:'空运流程',
-    quote:'运费估算',
-    service:'在线客服',
-    hotSale:'热销产品推荐',
-    partnership:'合作商家'
-  }
+  home: {
+    login: '会员登录',
+    register: '注册账号',
+    packages: '累计运送',
+    cooperation: '合作企业',
+    projects: '成功项目',
+    viewMore: '点击查看',
+    ocean: '超值海运流程',
+    air: '空运流程',
+    quote: '运费估算',
+    service: '在线客服',
+    hotSale: '热销产品推荐',
+    partnership: '合作商家',
+  },
+  userMenu: {
+    track: '包裹查询',
+    quote: '运费评估',
+    setting: '个人设置',
+    ship: '申请邮寄',
+    getPackage: '包裹认领',
+    warehouse: '包裹预报',
+    myPackage: '我的包裹',
+    logout: '退出登录',
+  },
+  user: {
+    queryType: '查询类型',
+    trackingNumber: '快递单号',
+  },
 }

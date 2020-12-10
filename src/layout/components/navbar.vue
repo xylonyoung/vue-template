@@ -11,7 +11,7 @@
       fit="contain"
       :style="logoStyle"
     ></el-image>
-    <div class="nav-list" v-if="!mobile">
+    <div class="nav-list" v-show="!mobile">
       <el-menu
         :default-active="activeIndex"
         mode="horizontal"
@@ -23,6 +23,7 @@
           v-for="(item, index) in pages"
           :key="index"
         >
+          <i class="el-icon-s-custom" v-if="item.link === '/user'"></i>
           {{ item.name }}
         </el-menu-item>
       </el-menu>
@@ -52,12 +53,12 @@ import LangSelector from '@/components/lang-selector/lang-selector.vue'
 export default {
   components: { LangSelector },
   computed: {
-    ...mapGetters(['mobile']),
+    ...mapGetters(['mobile', 'user']),
     activeIndex() {
       return this.pages.findIndex(e => e.link === location.pathname).toString()
     },
     pages() {
-      return [
+      let arr = [
         { name: this.$t('navbar.home'), link: '/' },
         { name: this.$t('navbar.aboutUs'), link: '/about-us' },
         { name: this.$t('navbar.ship'), link: '/ship' },
@@ -66,6 +67,10 @@ export default {
         { name: this.$t('navbar.partner'), link: '/partner' },
         { name: this.$t('navbar.contact'), link: '/contact' },
       ]
+      if (this.user.name) {
+        arr.push({ name: this.user.name, link: '/user' })
+      }
+      return arr
     },
     logoStyle() {
       if (this.mobile) {

@@ -17,38 +17,67 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'Login',
-    component: () => import('@/views/login/login'),
-  },
-  {
-    path: '/forgot',
-    name: 'Forgot',
-    component: () => import('@/views/login/forgot'),
-  },
-  {
-    path: '/register',
-    name: 'Register',
-    component: () => import('@/views/login/register'),
-  },
-  {
-    path: '/',
-    name: 'Home',
     component: Layout,
     children: [
       {
         path: '/',
+        name: 'Login',
+        component: () => import('@/views/login/login'),
+      },
+    ],
+  },
+  {
+    path: '/forgot',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'Forgot',
+        component: () => import('@/views/login/forgot'),
+      },
+    ],
+  },
+  {
+    path: '/register',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'Register',
+        component: () => import('@/views/login/register'),
+      },
+    ],
+  },
+  {
+    path: '/',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'Home',
         component: () => import('@/views/home/home'),
       },
     ],
   },
   {
     path: '/about-us',
-    name: 'AboutUs',
     component: Layout,
     children: [
       {
         path: '/',
+        name: 'AboutUs',
         component: () => import('@/views/about-us/about-us'),
+      },
+    ],
+  },
+  {
+    path: '/user',
+    component: Layout,
+    children: [
+      {
+        path: '/user',
+        name: 'User',
+        component: () => import('@/views/user/user'),
       },
     ],
   },

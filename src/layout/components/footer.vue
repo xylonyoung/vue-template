@@ -41,6 +41,7 @@ export default {
 <style lang="scss" scoped>
 .footer-container {
   width: 100%;
+  height: 50px;
   padding: 20px 0;
   text-align: center;
   background-color: #394052;

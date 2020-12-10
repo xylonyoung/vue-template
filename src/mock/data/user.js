@@ -22,6 +22,6 @@ const login = Mock.mock(
 )
 
 export default {
-  'user.get': () => user,
-  'user.login': () => login,
+  'api/user.get': () => user,
+  'api-login.post': () => login,
 }

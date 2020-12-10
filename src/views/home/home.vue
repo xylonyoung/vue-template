@@ -1,23 +1,31 @@
 <template>
   <div class="main-container">
-    <el-carousel height="300px">
+    <el-carousel :height="mobile ? '150px' : '300px'">
       <el-carousel-item v-for="item in 3" :key="item">
-        <el-image :src="require('@/assets/temp/carousel.jpg')"></el-image>
+        <el-image
+          :src="require('@/assets/temp/carousel.jpg')"
+          fit="fit"
+          style="width: 100%; height: 100%"
+        ></el-image>
       </el-carousel-item>
     </el-carousel>
     <div class="login">
       <div>
         <div class="login-btn">
-          <el-button type="warning" round>{{ $t('home.login') }}</el-button>
+          <el-button type="warning" round @click="navTo('login')">
+            {{ $t('home.login') }}
+          </el-button>
         </div>
         <div class="login-btn">
-          <el-button type="warning" round>{{ $t('home.register') }}</el-button>
+          <el-button type="warning" round @click="navTo('register')">
+            {{ $t('home.register') }}
+          </el-button>
         </div>
       </div>
       <div class="total">
         <div>
           <div>
-            <el-image :src="require('@/assets/home/van.png')"></el-image>
+            <el-image :src="require('@/assets/home/van.png')" fit="contain"></el-image>
             <count-to :start-val="0" :end-val="2930" class="count-to" />
             <span v-if="language === 'zh'">件</span>
           </div>
@@ -25,7 +33,10 @@
         </div>
         <div>
           <div>
-            <el-image :src="require('@/assets/home/cooperation.png')"></el-image>
+            <el-image
+              :src="require('@/assets/home/cooperation.png')"
+              fit="contain"
+            ></el-image>
             <count-to :start-val="0" :end-val="230" class="count-to" />
             <span v-if="language === 'zh'">家</span>
           </div>
@@ -33,7 +44,10 @@
         </div>
         <div>
           <div>
-            <el-image :src="require('@/assets/home/project.png')"></el-image>
+            <el-image
+              :src="require('@/assets/home/project.png')"
+              fit="contain"
+            ></el-image>
             <count-to :start-val="0" :end-val="1000" class="count-to" />
             <span v-if="language === 'zh'">个</span>
           </div>
@@ -93,7 +107,7 @@ export default {
     CountTo,
   },
   computed: {
-    ...mapGetters(['language']),
+    ...mapGetters(['language', 'mobile']),
     viewMore() {
       return [
         {
@@ -128,15 +142,17 @@ export default {
       },
     }
   },
+  methods: {
+    navTo(link) {
+      this.$router.push(link)
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
-.el-button {
-  color: #2d2d2d;
-}
 .login {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 30px 10%;
   background-color: #f5f5f5;
@@ -144,7 +160,7 @@ export default {
     margin-top: 10px;
   }
   .login-btn {
-    width: 120px;
+    width: 110px;
     .el-button {
       width: 100%;
     }
@@ -153,14 +169,20 @@ export default {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    flex-wrap: wrap;
+    width: 60%;
     &:before {
       content: '';
       position: absolute;
       top: calc((90px - 100%) / -2);
-      left: calc((100% / 0.7 - 100% - 120px) / -2);
+      left: calc((100% / 0.6 - 100% - 110px) / 2 / -2);
       height: 90px;
       border-left: 2px solid #a6a6a6;
+    }
+
+    .el-image {
+      width: 40px;
+      height: 40px;
     }
     .count-to {
       position: relative;
@@ -171,7 +193,7 @@ export default {
         position: absolute;
         bottom: -20%;
         left: -36px;
-        width: 80px;
+        width: 90px;
         border-bottom: 2px solid #ffc702;
       }
     }
@@ -182,8 +204,9 @@ export default {
 }
 .view-more {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   padding: 30px 10%;
   .item + .item {
     position: relative;
@@ -191,7 +214,7 @@ export default {
       content: '';
       position: absolute;
       top: 0;
-      left: calc((1226px * 0.8 - 120px * 4) / 3 / -2);
+      left: 0;
       height: 100%;
       border-left: 1px solid #eee;
     }
@@ -200,6 +223,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
     .name {
       padding: 10px 0;
       font-size: 16px;

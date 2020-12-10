@@ -1,6 +1,6 @@
 <template>
   <div class="layout-container">
-    <header><navbar /></header>
+    <header v-if="hideHeader"><navbar /></header>
     <main>
       <keep-alive :include="cachedViews">
         <router-view :key="key" />
@@ -24,6 +24,10 @@ export default {
     key() {
       return this.$route.path
     },
+    hideHeader() {
+      const pages = ['/login', '/register', '/forgot']
+      return !pages.includes(this.$route.path)
+    },
   },
   beforeMount() {
     window.addEventListener('resize', this.resizeHandler)
@@ -31,25 +35,20 @@ export default {
   beforeDestroy() {
     window.removeEventListener('resize', this.resizeHandler)
   },
+  watch: {
+    $route: {
+      handler() {
+        this.resizeHandler()
+      },
+      deep: true,
+    },
+  },
   mounted() {
     this.resizeHandler()
   },
   methods: {
     resizeHandler() {
-      if (!document.hidden) {
-        const isMobile = document.documentElement.clientWidth < 1226
-        const container = document.getElementsByClassName('main-container')
-        this.$store.dispatch('app/mobileDevice', isMobile)
-        if (isMobile) {
-          container.forEach(e => {
-            e.style.width = '100%'
-          })
-        } else {
-          container.forEach(e => {
-            e.style.width = '1226px'
-          })
-        }
-      }
+      this.$store.dispatch('app/resize', this)
     },
   },
 }
@@ -65,6 +64,7 @@ export default {
   }
   .main-container {
     margin: 0 auto;
+    overflow: hidden;
   }
 }
 </style>

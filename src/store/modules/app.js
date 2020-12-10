@@ -17,11 +17,24 @@ const mutations = {
 }
 
 const actions = {
-  mobileDevice({ commit }, isMobile) {
-    commit('MOBILE_DEVICE', isMobile)
-  },
   setLanguage({ commit }, language) {
     commit('SET_LANGUAGE', language)
+  },
+  resize({ commit }, _this) {
+    const isMobile = document.documentElement.clientWidth < 1226
+    const container = document.getElementsByClassName('main-container')
+    commit('MOBILE_DEVICE', isMobile)
+    _this.$nextTick(() => {
+      if (isMobile) {
+        container.forEach(e => {
+          e.style.width = '100%'
+        })
+      } else {
+        container.forEach(e => {
+          e.style.width = '1226px'
+        })
+      }
+    })
   },
 }
 
