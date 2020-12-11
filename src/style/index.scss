@@ -5,12 +5,20 @@ body {
   background-color: #fff;
   margin: 0;
 }
-.user-wrapper {
+
+.el-button--warning {
+  color: #2d2d2d;
+}
+
+.user-right-wrapper {
   display: flex;
   justify-content: center;
-  min-height: calc(100vh - 190px);
-  background-color: #f5f5f5;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
 }
-.el-button {
-  color: #2d2d2d;
+.user-right-wrapper-table {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }

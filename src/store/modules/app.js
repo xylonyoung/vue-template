@@ -3,7 +3,6 @@ import { getLanguage } from '@/lang/index'
 const state = {
   mobile: false,
   language: getLanguage(),
-  cachedViews: [],
 }
 
 const mutations = {

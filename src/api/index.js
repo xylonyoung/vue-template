@@ -1,6 +1,7 @@
 import request from './request'
 const api = {
-  name: '/api/name',
+  agreement: 'agreement',
+
 }
 class Api {
   constructor(api) {

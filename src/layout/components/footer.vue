@@ -11,14 +11,20 @@
       </router-link>
     </div>
     <div class="copyright">
-      Copyright © 2020 Apple Inc. 保留所有权利。京ICP备10214630 营业执照
-      无线电发射设备销售备案编号11201910351200
+      <span>{{ $t('copyright') }}</span>
+      <template v-if="language === 'zh'">
+        <span>京ICP备10214630</span>
+        <span>营业执照</span>
+        <span>无线电发射设备销售备案编号11201910351200</span>
+      </template>
     </div>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   computed: {
+    ...mapGetters(['language']),
     pages() {
       return [
         { name: this.$t('navbar.home'), link: '/' },
@@ -72,6 +78,9 @@ export default {
   .copyright {
     font-size: 12px;
     color: #9dafc0;
+    span + span {
+      margin-left: 10px;
+    }
   }
 }
 </style>

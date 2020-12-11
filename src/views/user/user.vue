@@ -20,6 +20,10 @@
         </div>
         <div class="right">
           <user-track v-if="activeMenu === 'track'" />
+          <user-quote v-if="activeMenu === 'quote'" />
+          <user-setting v-if="activeMenu === 'setting'" />
+          <user-ship v-if="activeMenu === 'ship'" />
+          <user-get-package v-if="activeMenu === 'getPackage'" />
         </div>
       </div>
     </div>
@@ -27,18 +31,23 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
+import UserGetPackage from './get-package.vue'
+import UserQuote from './quote.vue'
+import UserSetting from './setting.vue'
+import UserShip from './ship.vue'
 import UserTrack from './track.vue'
 export default {
-  components: { UserTrack },
+  components: { UserTrack, UserQuote, UserSetting, UserShip, UserGetPackage },
   computed: {
     ...mapGetters(['user']),
     userMenu() {
       return [
         'track',
         'quote',
+        'setting',
         'ship',
         'getPackage',
-        'warehouse',
+        'reservation',
         'myPackage',
         'logout',
       ].map(e => {
@@ -67,6 +76,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.user-wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 190px);
+  background-color: #f5f5f5;
+}
 .user {
   display: flex;
   width: 80%;
@@ -78,6 +93,9 @@ export default {
     padding: 20px 0;
     text-align: center;
     border-right: 3px solid #f5f5f5;
+    .el-button--text {
+      color: #2d2d2d;
+    }
     .el-image {
       width: 100px;
       height: 100px;

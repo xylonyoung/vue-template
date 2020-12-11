@@ -144,7 +144,16 @@ export default {
   },
   methods: {
     navTo(link) {
-      this.$router.push(link)
+      if (link === 'register') {
+        this.$router.push({
+          path: 'login',
+          query: {
+            active: 'register',
+          },
+        })
+      } else {
+        this.$router.push(link)
+      }
     },
   },
 }

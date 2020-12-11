@@ -1,27 +1,21 @@
 <template>
-  <div class="track-wrapper">
-      <el-form
-        :model="ruleForm"
-        :rules="rules"
-        ref="ruleForm"
-        label-width="100px"
-        class="demo-ruleForm"
-      >
-        <el-form-item :label="$t('user.queryType')" prop="type">
-          <el-select v-model="ruleForm.type">
-            <el-option label="区域一" value="shanghai"></el-option>
-            <el-option label="区域二" value="beijing"></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item :label="$t('user.trackingNumber')" prop="number">
-          <el-input v-model="ruleForm.number"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="warning" @click="submitForm('ruleForm')">
-            {{ $t('base.submit') }}
-          </el-button>
-        </el-form-item>
-      </el-form>
+  <div class="user-right-wrapper">
+    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" hide-required-asterisk>
+      <el-form-item :label="$t('base.queryType')" prop="type">
+        <el-select v-model="ruleForm.type">
+          <el-option label="区域一" value="shanghai"></el-option>
+          <el-option label="区域二" value="beijing"></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item :label="$t('base.trackingNumber')" prop="number">
+        <el-input v-model="ruleForm.number"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="warning" @click="submitForm('ruleForm')">
+          {{ $t('base.submit') }}
+        </el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 <script>
@@ -50,11 +44,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.track-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 100px;
-}
 </style>

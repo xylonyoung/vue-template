@@ -8,45 +8,14 @@ const routes = [
   {
     path: '/404',
     component: () => import('@/views/error-page/404'),
-    hidden: true,
   },
   {
     path: '/401',
     component: () => import('@/views/error-page/401'),
-    hidden: true,
   },
   {
-    path: '/login',
-    component: Layout,
-    children: [
-      {
-        path: '/',
-        name: 'Login',
-        component: () => import('@/views/login/login'),
-      },
-    ],
-  },
-  {
-    path: '/forgot',
-    component: Layout,
-    children: [
-      {
-        path: '/',
-        name: 'Forgot',
-        component: () => import('@/views/login/forgot'),
-      },
-    ],
-  },
-  {
-    path: '/register',
-    component: Layout,
-    children: [
-      {
-        path: '/',
-        name: 'Register',
-        component: () => import('@/views/login/register'),
-      },
-    ],
+    path: '/agreement',
+    component: () => import('@/views/agreement/agreement'),
   },
   {
     path: '/',
@@ -59,6 +28,18 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/login',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'Login',
+        component: () => import('@/views/login/login'),
+      },
+    ],
+  },
+
   {
     path: '/about-us',
     component: Layout,
@@ -82,7 +63,7 @@ const routes = [
     ],
   },
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true },
+  { path: '*', redirect: '/404' },
 ]
 
 const router = new VueRouter({

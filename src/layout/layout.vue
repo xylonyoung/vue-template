@@ -2,7 +2,7 @@
   <div class="layout-container">
     <header v-if="hideHeader"><navbar /></header>
     <main>
-      <keep-alive :include="cachedViews">
+      <keep-alive :max="10">
         <router-view :key="key" />
       </keep-alive>
     </main>
@@ -18,14 +18,11 @@ export default {
   name: 'Layout',
   components: { Navbar, NavFooter },
   computed: {
-    cachedViews() {
-      return []
-    },
     key() {
       return this.$route.path
     },
     hideHeader() {
-      const pages = ['/login', '/register', '/forgot']
+      const pages = ['/login']
       return !pages.includes(this.$route.path)
     },
   },
@@ -44,6 +41,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.cachedViews)
     this.resizeHandler()
   },
   methods: {
