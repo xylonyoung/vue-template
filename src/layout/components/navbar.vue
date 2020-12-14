@@ -87,7 +87,6 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath)
       this.drawer = false
       this.$router.push(this.pages[key].link)
     },

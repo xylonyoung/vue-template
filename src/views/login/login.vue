@@ -2,7 +2,7 @@
   <div class="login-wrapper">
     <div class="main-container">
       <div class="top">
-        <router-link to="/">
+        <router-link to="/" style="display: flex; align-items: center">
           <el-image :src="require('@/assets/long-logo.png')" fit="contain"></el-image>
         </router-link>
         <lang-selector />

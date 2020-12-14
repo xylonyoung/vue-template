@@ -2,7 +2,7 @@ export default {
   copyright: 'Copyright © 2020 Apple Inc. 保留所有权利。',
   base: {
     agreement: '已阅读并同意：用户协议',
-    get:'认领',
+    get: '认领',
     time: '时间',
     search: '搜索',
     success: '成功',
@@ -30,6 +30,9 @@ export default {
     sendCode: '发送验证码',
     destination: '目的地',
     warehouse: '仓库',
+    packageName: '货物名称',
+    shipmentNumber: '运单号',
+    notes: '备注',
   },
   login: {
     signIn: '账号登录',

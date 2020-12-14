@@ -14,6 +14,7 @@
 <script>
 import Navbar from './components/navbar'
 import NavFooter from './components/footer'
+import { hideHeaderPaths } from '@/settings'
 export default {
   name: 'Layout',
   components: { Navbar, NavFooter },
@@ -22,8 +23,7 @@ export default {
       return this.$route.path
     },
     hideHeader() {
-      const pages = ['/login']
-      return !pages.includes(this.$route.path)
+      return !hideHeaderPaths.includes(this.$route.path)
     },
   },
   beforeMount() {

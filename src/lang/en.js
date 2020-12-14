@@ -29,7 +29,10 @@ export default {
     verificationCode:'Verification Code',
     sendCode:'Send Code',
     destination:'Destination',
-    warehouse:'Warehouse'
+    warehouse:'Warehouse',
+    packageName:'Package Name',
+    shipmentNumber:'Shipment Number',
+    notes:'Notes'
   },
   login: {
     signIn: 'Sign In',
