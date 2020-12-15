@@ -1,7 +1,7 @@
 import request from './request'
 const api = {
   agreement: 'agreement',
-
+  list: 'list',
 }
 class Api {
   constructor(api) {

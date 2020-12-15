@@ -1,6 +1,10 @@
 import newMock from '../new-mock'
 import { param2Obj } from '../utils'
 
+export default {
+  'list.get': response => createList(response),
+}
+
 function createList(response) {
   let params = { page: 1, next: 2, endPage: 3 }
   if (response) {
@@ -25,8 +29,4 @@ function createList(response) {
       totalCount: 30,
     },
   })
-}
-export default {
-  'load-list.get': response => createList(response),
-  'uni-pagination.get': response => createList(response),
 }

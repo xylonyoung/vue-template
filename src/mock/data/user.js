@@ -1,28 +1,35 @@
 import newMock from '../new-mock'
-const user = newMock({
-  'data|10': [
-    {
-      createdTime: '@datetime',
-      name: '@cname',
-      region: '@region',
-      avatar: '@image',
-      'images|3': ['@image'],
-    },
-  ],
-})
-
-const login = newMock({
-  data: 'token',
-})
-
-const agreement = newMock({
-  data: { en: agreementEn, zh: agreementZh },
-})
 
 export default {
-  'api/user.get': () => user,
-  'api-login.post': () => login,
-  'agreement.get': response => agreement(response),
+  'api/user.get': () => user(),
+  'api-login.post': () => login(),
+  'agreement.get': () => agreement(),
+}
+
+function user() {
+  return newMock({
+    'data|10': [
+      {
+        createdTime: '@datetime',
+        name: '@cname',
+        region: '@region',
+        avatar: '@image',
+        'images|3': ['@image'],
+      },
+    ],
+  })
+}
+
+function login() {
+  return newMock({
+    data: 'token',
+  })
+}
+
+function agreement() {
+  return newMock({
+    data: { en: agreementEn, zh: agreementZh },
+  })
 }
 
 const agreementZh = `

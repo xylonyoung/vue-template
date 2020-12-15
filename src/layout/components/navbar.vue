@@ -62,7 +62,7 @@ export default {
         { name: this.$t('navbar.home'), link: '/' },
         { name: this.$t('navbar.aboutUs'), link: '/about-us' },
         { name: this.$t('navbar.ship'), link: '/ship' },
-        { name: this.$t('navbar.recommendation'), link: '/recommendation' },
+        { name: this.$t('navbar.product'), link: '/product' },
         { name: this.$t('navbar.news'), link: '/news' },
         { name: this.$t('navbar.partner'), link: '/partner' },
         { name: this.$t('navbar.contact'), link: '/contact' },

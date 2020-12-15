@@ -18,6 +18,10 @@ const routes = [
     component: () => import('@/views/agreement/agreement'),
   },
   {
+    path: '/exceptions',
+    component: () => import('@/views/exceptions/exceptions'),
+  },
+  {
     path: '/',
     component: Layout,
     children: [
@@ -41,6 +45,17 @@ const routes = [
   },
 
   {
+    path: '/user',
+    component: Layout,
+    children: [
+      {
+        path: '/user',
+        name: 'User',
+        component: () => import('@/views/user/user'),
+      },
+    ],
+  },
+  {
     path: '/about-us',
     component: Layout,
     children: [
@@ -52,13 +67,57 @@ const routes = [
     ],
   },
   {
-    path: '/user',
+    path: '/ship',
     component: Layout,
     children: [
       {
-        path: '/user',
-        name: 'User',
-        component: () => import('@/views/user/user'),
+        path: '/',
+        name: 'Ship',
+        component: () => import('@/views/ship/ship'),
+      },
+    ],
+  },
+  {
+    path: '/product',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'Product',
+        component: () => import('@/views/product/product'),
+      },
+    ],
+  },
+  {
+    path: '/news',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'News',
+        component: () => import('@/views/news/news'),
+      },
+    ],
+  },
+  {
+    path: '/partner',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'Partner',
+        component: () => import('@/views/partner/partner'),
+      },
+    ],
+  },
+  {
+    path: '/contact',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'contact',
+        component: () => import('@/views/contact/contact'),
       },
     ],
   },

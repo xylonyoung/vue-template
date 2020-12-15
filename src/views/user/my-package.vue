@@ -17,15 +17,13 @@
         :label="$t('base.trackingNumber')"
         width="200"
       ></el-table-column>
-      <el-table-column prop="date" :label="$t('base.time')" width="180"></el-table-column>
-      <el-table-column prop="warehouse" :label="$t('base.warehouse')"></el-table-column>
-      <el-table-column width="100">
-        <div style="text-align: center">
-          <el-button type="warning" size="mini">
-            {{ $t('base.get') }}
-          </el-button>
-        </div>
-      </el-table-column>
+      <el-table-column prop="date" :label="$t('base.time')" width="100"></el-table-column>
+      <el-table-column
+        prop="warehouse"
+        :label="$t('base.warehouse')"
+        width="200"
+      ></el-table-column>
+      <el-table-column prop="warehouse" :label="$t('base.status')"></el-table-column>
     </el-table>
     <el-pagination
       @size-change="handleSizeChange"

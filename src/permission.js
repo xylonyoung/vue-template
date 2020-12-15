@@ -1,8 +1,7 @@
 import router from './router'
 import store from './store'
+import { needLoginPaths } from './settings'
 import { Message } from 'element-ui'
-
-const loginList = [] // need login list
 
 store.commit('user/SET_TOKEN', localStorage.getItem('token'))
 
@@ -29,7 +28,7 @@ router.beforeEach(async (to, from, next) => {
     }
   } else {
     /* has no token*/
-    if (loginList.includes(to.path)) {
+    if (needLoginPaths.includes(to.path)) {
       next('/login')
     } else {
       next()

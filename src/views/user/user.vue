@@ -25,6 +25,7 @@
           <user-ship v-if="activeMenu === 'ship'" />
           <user-get-package v-if="activeMenu === 'getPackage'" />
           <user-reservation v-if="activeMenu === 'reservation'" />
+          <user-my-package v-if="activeMenu === 'myPackage'" />
         </div>
       </div>
     </div>
@@ -33,6 +34,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import UserGetPackage from './get-package.vue'
+import UserMyPackage from './my-package.vue'
 import UserQuote from './quote.vue'
 import UserReservation from './reservation.vue'
 import UserSetting from './setting.vue'
@@ -46,6 +48,7 @@ export default {
     UserShip,
     UserGetPackage,
     UserReservation,
+    UserMyPackage,
   },
   computed: {
     ...mapGetters(['user']),
