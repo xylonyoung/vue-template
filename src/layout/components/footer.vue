@@ -24,13 +24,13 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['language']),
+    ...mapGetters(['language', 'mobile']),
     pages() {
       return [
         { name: this.$t('navbar.home'), link: '/' },
         { name: this.$t('navbar.aboutUs'), link: '/about-us' },
         { name: this.$t('navbar.ship'), link: '/ship' },
-        { name: this.$t('navbar.recommendation'), link: '/recommendation' },
+        { name: this.$t('navbar.product'), link: '/product' },
         { name: this.$t('navbar.partner'), link: '/partner' },
         { name: this.$t('navbar.contact'), link: '/contact' },
       ]
@@ -46,12 +46,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .footer-container {
-  width: 100%;
-  height: 50px;
-  padding: 20px 0;
+  width: 90%;
+  min-height: 50px;
+  padding: 20px 5%;
   text-align: center;
   background-color: #394052;
   .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
     .link-item {
       font-size: 14px;

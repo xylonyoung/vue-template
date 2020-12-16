@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 import store from '@/store'
-import { baseURL } from './url'
+import { baseURL } from '@/settings'
 
 // create an axios instance
 const service = axios.create({
@@ -44,7 +44,7 @@ service.interceptors.response.use(
 
     if (res.code === 403) {
       // to re-login
-      store.dispatch('user/resetToken').then(() => {
+      store.dispatch('user/logout').then(() => {
         location.reload()
       })
     } else {

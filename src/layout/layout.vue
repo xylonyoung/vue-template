@@ -41,7 +41,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.cachedViews)
     this.resizeHandler()
   },
   methods: {
