@@ -36,10 +36,10 @@
             </el-button>
           </div>
           <div class="account">
-            <el-button type="text" @click="toShow('register')">
+            <el-button type="text" @click="toShow('registerForm')">
               {{ $t('login.register') }}
             </el-button>
-            <el-button type="text" @click="toShow('forgot')">
+            <el-button type="text" @click="toShow('resetForm')">
               {{ $t('login.forgot') }}
             </el-button>
           </div>
@@ -141,7 +141,7 @@
             </el-button>
           </div>
           <div class="account">
-            <el-button type="text" @click="toShow('login')">
+            <el-button type="text" @click="toShow('loginForm')">
               {{ $t('login.login') }}
             </el-button>
           </div>
@@ -190,7 +190,7 @@
             </el-button>
           </div>
           <div class="account">
-            <el-button type="text" @click="toShow('login')">
+            <el-button type="text" @click="toShow('loginForm')">
               {{ $t('login.login') }}
             </el-button>
           </div>
