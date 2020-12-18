@@ -7,179 +7,197 @@
         </router-link>
         <lang-selector />
       </div>
-      <div class="login-form" v-if="activeForm === 'login'">
-        <div class="title">{{ $t('login.signIn') }}</div>
-        <el-form ref="form" :rules="rules" :model="loginForm" hide-required-asterisk>
-          <el-form-item label="" prop="username">
-            <el-input
-              v-model="loginForm.username"
-              :placeholder="$t('login.username')"
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="password">
-            <el-input
-              v-model="loginForm.password"
-              :placeholder="$t('login.password')"
-              show-password
-            ></el-input>
-          </el-form-item>
-        </el-form>
-        <div class="submit-btn">
-          <el-button type="warning" @click="onSubmit">
-            {{ $t('base.submit') }}
-          </el-button>
+      <transition name="slide" mode="out-in">
+        <div class="login-form" key="loginForm" v-if="activeForm === 'loginForm'">
+          <div class="title">{{ $t('login.signIn') }}</div>
+          <el-form
+            ref="loginForm"
+            :rules="rules"
+            :model="loginForm"
+            hide-required-asterisk
+          >
+            <el-form-item label="" prop="username">
+              <el-input
+                v-model="loginForm.username"
+                :placeholder="$t('login.username')"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="password">
+              <el-input
+                v-model="loginForm.password"
+                :placeholder="$t('login.password')"
+                show-password
+              ></el-input>
+            </el-form-item>
+          </el-form>
+          <div class="submit-btn">
+            <el-button type="warning" @click="onSubmit('loginForm')">
+              {{ $t('base.submit') }}
+            </el-button>
+          </div>
+          <div class="account">
+            <el-button type="text" @click="toShow('register')">
+              {{ $t('login.register') }}
+            </el-button>
+            <el-button type="text" @click="toShow('forgot')">
+              {{ $t('login.forgot') }}
+            </el-button>
+          </div>
         </div>
-        <div class="account">
-          <el-button type="text" @click="toShow('register')">
-            {{ $t('login.register') }}
-          </el-button>
-          <el-button type="text" @click="toShow('forgot')">
-            {{ $t('login.forgot') }}
-          </el-button>
-        </div>
-      </div>
 
-      <div class="login-form" v-if="activeForm === 'register'">
-        <div class="title">{{ $t('login.signIn') }}</div>
-        <el-form ref="form" :rules="rules" :model="registerForm" hide-required-asterisk>
-          <el-form-item label="" prop="username">
-            <el-input
-              v-model="registerForm.username"
-              :placeholder="$t('login.username')"
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="password">
-            <el-input
-              v-model="registerForm.password"
-              :placeholder="$t('login.password')"
-              show-password
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="confirmPassword">
-            <el-input
-              v-model="registerForm.confirmPassword"
-              :placeholder="$t('login.confirmPassword')"
-              show-password
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="email">
-            <el-input
-              v-model="registerForm.email"
-              :placeholder="$t('base.email')"
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="australiaPhone">
-            <el-input
-              v-model="registerForm.australiaPhone"
-              :placeholder="$t('base.australiaPhone')"
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="australiaAddress">
-            <el-select
-              v-model="registerForm.australiaAddress"
-              :placeholder="$t('base.australiaAddress')"
-              style="width: 100%"
-            >
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="" prop="detailedAddress">
-            <el-input
-              v-model="registerForm.detailedAddress"
-              :placeholder="$t('base.detailedAddress')"
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="australiaId">
-            <el-upload
-              action="https://jsonplaceholder.typicode.com/posts/"
-              :on-preview="handlePreview"
-              :on-remove="handleRemove"
-              :file-list="fileList"
-              list-type="picture"
-            >
-              <el-button size="small">
-                {{ `${$t('base.upload')}  ${$t('base.australiaId')}` }}
-              </el-button>
-            </el-upload>
-          </el-form-item>
-          <el-form-item label="" prop="verificationCode">
-            <el-input
-              v-model="registerForm.verificationCode"
-              :placeholder="$t('base.verificationCode')"
-            >
-              <el-button slot="append">{{ $t('base.sendCode') }}</el-button>
-            </el-input>
-          </el-form-item>
+        <div class="login-form" key="registerForm" v-if="activeForm === 'registerForm'">
+          <div class="title">{{ $t('login.signIn') }}</div>
+          <el-form
+            ref="registerForm"
+            :rules="rules"
+            :model="registerForm"
+            hide-required-asterisk
+          >
+            <el-form-item label="" prop="username">
+              <el-input
+                v-model="registerForm.username"
+                :placeholder="$t('login.username')"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="password">
+              <el-input
+                v-model="registerForm.password"
+                :placeholder="$t('login.password')"
+                show-password
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="confirmPassword">
+              <el-input
+                v-model="registerForm.confirmPassword"
+                :placeholder="$t('login.confirmPassword')"
+                show-password
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="email">
+              <el-input
+                v-model="registerForm.email"
+                :placeholder="$t('base.email')"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="australiaPhone">
+              <el-input
+                v-model="registerForm.australiaPhone"
+                :placeholder="$t('base.australiaPhone')"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="australiaAddress">
+              <el-select
+                v-model="registerForm.australiaAddress"
+                :placeholder="$t('base.australiaAddress')"
+                style="width: 100%"
+              >
+                <el-option label="区域一" value="shanghai"></el-option>
+                <el-option label="区域二" value="beijing"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="" prop="detailedAddress">
+              <el-input
+                v-model="registerForm.detailedAddress"
+                :placeholder="$t('base.detailedAddress')"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="australiaId">
+              <el-upload
+                action="https://jsonplaceholder.typicode.com/posts/"
+                :on-preview="handlePreview"
+                :on-remove="handleRemove"
+                :file-list="fileList"
+                list-type="picture"
+              >
+                <el-button size="small">
+                  {{ `${$t('base.upload')}  ${$t('base.australiaId')}` }}
+                </el-button>
+              </el-upload>
+            </el-form-item>
+            <el-form-item label="" prop="verificationCode">
+              <el-input
+                v-model="registerForm.verificationCode"
+                :placeholder="$t('base.verificationCode')"
+              >
+                <el-button slot="append">{{ $t('base.sendCode') }}</el-button>
+              </el-input>
+            </el-form-item>
+            <el-form-item label="" prop="agreement">
+              <el-checkbox v-model="registerForm.agreement"></el-checkbox>
+              <router-link
+                target="_blank"
+                :to="{ path: '/agreement', query: { language: language } }"
+                style="margin-left: 10px"
+              >
+                <el-button type="text">
+                  {{ $t('base.agreement') }}
+                </el-button>
+              </router-link>
+            </el-form-item>
+          </el-form>
+          <div class="submit-btn">
+            <el-button type="warning" @click="onSubmit('registerForm')">
+              {{ $t('base.submit') }}
+            </el-button>
+          </div>
+          <div class="account">
+            <el-button type="text" @click="toShow('login')">
+              {{ $t('login.login') }}
+            </el-button>
+          </div>
+        </div>
 
-          <el-form-item label="" prop="agreement">
-            <el-checkbox v-model="registerForm.agreement"></el-checkbox>
-            <router-link
-              target="_blank"
-              :to="{ path: '/agreement', query: { language: language } }"
-              style="margin-left: 10px"
-            >
-              <el-button type="text">
-                {{ $t('base.agreement') }}
-              </el-button>
-            </router-link>
-          </el-form-item>
-        </el-form>
-        <div class="submit-btn">
-          <el-button type="warning" @click="onSubmit">
-            {{ $t('base.submit') }}
-          </el-button>
+        <div class="login-form" key="resetForm" v-if="activeForm === 'resetForm'">
+          <div class="title">{{ $t('login.resetPassword') }}</div>
+          <el-form
+            ref="resetForm"
+            :rules="rules"
+            :model="resetForm"
+            hide-required-asterisk
+          >
+            <el-form-item label="" prop="australiaPhone">
+              <el-input
+                v-model="resetForm.australiaPhone"
+                :placeholder="$t('base.australiaPhone')"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="verificationCode">
+              <el-input
+                v-model="resetForm.verificationCode"
+                :placeholder="$t('base.verificationCode')"
+              >
+                <el-button slot="append">{{ $t('base.sendCode') }}</el-button>
+              </el-input>
+            </el-form-item>
+            <el-form-item label="" prop="newPassword">
+              <el-input
+                v-model="resetForm.newPassword"
+                :placeholder="$t('login.newPassword')"
+                show-password
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="confirmPassword">
+              <el-input
+                v-model="resetForm.confirmPassword"
+                :placeholder="$t('login.confirmPassword')"
+                show-password
+              ></el-input>
+            </el-form-item>
+          </el-form>
+          <div class="submit-btn">
+            <el-button type="warning" @click="onSubmit('resetForm')">
+              {{ $t('base.submit') }}
+            </el-button>
+          </div>
+          <div class="account">
+            <el-button type="text" @click="toShow('login')">
+              {{ $t('login.login') }}
+            </el-button>
+          </div>
         </div>
-        <div class="account">
-          <el-button type="text" @click="toShow('login')">
-            {{ $t('login.login') }}
-          </el-button>
-        </div>
-      </div>
-      <div class="login-form" v-if="activeForm === 'forgot'">
-        <div class="title">{{ $t('login.resetPassword') }}</div>
-        <el-form ref="form" :rules="rules" :model="resetForm" hide-required-asterisk>
-          <el-form-item label="" prop="australiaPhone">
-            <el-input
-              v-model="resetForm.australiaPhone"
-              :placeholder="$t('base.australiaPhone')"
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="verificationCode">
-            <el-input
-              v-model="resetForm.verificationCode"
-              :placeholder="$t('base.verificationCode')"
-            >
-              <el-button slot="append">{{ $t('base.sendCode') }}</el-button>
-            </el-input>
-          </el-form-item>
-          <el-form-item label="" prop="newPassword">
-            <el-input
-              v-model="resetForm.newPassword"
-              :placeholder="$t('login.newPassword')"
-              show-password
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="confirmPassword">
-            <el-input
-              v-model="resetForm.confirmPassword"
-              :placeholder="$t('login.confirmPassword')"
-              show-password
-            ></el-input>
-          </el-form-item>
-        </el-form>
-        <div class="submit-btn">
-          <el-button type="warning" @click="onSubmit">
-            {{ $t('base.submit') }}
-          </el-button>
-        </div>
-        <div class="account">
-          <el-button type="text" @click="toShow('login')">
-            {{ $t('login.login') }}
-          </el-button>
-        </div>
-      </div>
+      </transition>
     </div>
+
     <div class="center-img" :style="`background-image: url(${centerImg})`"></div>
   </div>
 </template>
@@ -193,7 +211,7 @@ export default {
   },
   data() {
     return {
-      activeForm: 'login',
+      activeForm: 'loginForm',
       loginForm: {},
       registerForm: {},
       resetForm: {},
@@ -206,8 +224,6 @@ export default {
         ],
       },
       fileList: [],
-      logo:
-        'https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png',
       centerImg:
         'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/72644d9b8031286de3cc74e151aefd90.jpg',
     }
@@ -219,10 +235,14 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
-      this.$refs.form.validate(valid => {
+    onSubmit(form) {
+      this.$refs[form].validate(valid => {
         if (valid) {
-          alert('submit!')
+          if (form === 'loginForm') {
+            this.$store.dispatch('user/login', this.loginForm).then(() => {
+              this.$router.push('/')
+            })
+          }
         } else {
           console.log('error submit!!')
           return false
@@ -242,6 +262,19 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s;
+}
+.slide-enter {
+  opacity: 0;
+  transform: translateY(-50%);
+}
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(50%);
+}
+
 .login-wrapper {
   position: relative;
   display: flex;

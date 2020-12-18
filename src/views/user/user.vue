@@ -19,13 +19,13 @@
           </div>
         </div>
         <div class="right">
-          <user-track v-if="activeMenu === 'track'" />
-          <user-quote v-if="activeMenu === 'quote'" />
-          <user-setting v-if="activeMenu === 'setting'" />
-          <user-ship v-if="activeMenu === 'ship'" />
-          <user-get-package v-if="activeMenu === 'getPackage'" />
-          <user-reservation v-if="activeMenu === 'reservation'" />
-          <user-my-package v-if="activeMenu === 'myPackage'" />
+          <user-track v-show="activeMenu === 'track'" />
+          <user-quote v-show="activeMenu === 'quote'" />
+          <user-setting v-show="activeMenu === 'setting'" />
+          <user-ship v-show="activeMenu === 'ship'" />
+          <user-get-package v-show="activeMenu === 'getPackage'" />
+          <user-reservation v-show="activeMenu === 'reservation'" />
+          <user-my-package v-show="activeMenu === 'myPackage'" />
         </div>
       </div>
     </div>
@@ -72,17 +72,16 @@ export default {
       activeMenu: 'track',
     }
   },
-  created() {
-    this.$store.commit('user/SET_USER', {
-      name: 'Angelina Jolie',
-      userId: '2554789',
-      avatar:
-        'https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1760455784,274818819&fm=26&gp=0.jpg',
-    })
-  },
+  created() {},
   methods: {
     menuHandler(item) {
-      this.activeMenu = item.name
+      if (item.name === 'logout') {
+        this.$store.dispatch('user/logout').then(()=>{
+          this.$router.push('/')
+        })
+      } else {
+        this.activeMenu = item.name
+      }
     },
   },
 }

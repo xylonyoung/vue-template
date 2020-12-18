@@ -41,14 +41,22 @@ service.interceptors.response.use(
    */
   response => {
     const res = response.data
-
-    if (res.code === 403) {
-      // to re-login
-      store.dispatch('user/logout').then(() => {
-        location.reload()
-      })
-    } else {
-      return res
+    switch (res.code) {
+      case 0:
+        return res
+      case 403:
+        // 403 need to reset token
+        store.dispatch('user/logout').then(() => {
+          location.reload()
+        })
+        break
+      default:
+        Message({
+          message: res.message || 'Error',
+          type: 'error',
+          duration: 5 * 1000,
+        })
+        break
     }
   },
   error => {

@@ -1,4 +1,5 @@
 import { getLanguage } from '@/lang/index'
+import { resizePx,mobilePx } from '@/settings'
 
 const state = {
   mobile: false,
@@ -20,7 +21,7 @@ const actions = {
     commit('SET_LANGUAGE', language)
   },
   resize({ commit }, _this) {
-    const isMobile = document.documentElement.clientWidth < 1226
+    const isMobile = document.documentElement.clientWidth < mobilePx
     const container = document.getElementsByClassName('main-container')
     commit('MOBILE_DEVICE', isMobile)
     _this.$nextTick(() => {
@@ -30,7 +31,7 @@ const actions = {
         })
       } else {
         container.forEach(e => {
-          e.style.width = '1226px'
+          e.style.width = resizePx + 'px'
         })
       }
     })

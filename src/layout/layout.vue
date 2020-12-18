@@ -3,7 +3,9 @@
     <header v-if="hideHeader"><navbar /></header>
     <main>
       <keep-alive :max="10">
-        <router-view :key="key" />
+        <transition name="fade">
+          <router-view :key="key" />
+        </transition>
       </keep-alive>
     </main>
     <footer>

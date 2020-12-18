@@ -3,6 +3,7 @@ const api = {
   agreement: 'agreement',
   list: 'list',
 }
+
 class Api {
   constructor(api) {
     for (const key in api) {

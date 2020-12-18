@@ -10,7 +10,14 @@
       </el-carousel-item>
     </el-carousel>
     <div class="login">
-      <div>
+      <div v-if="token">
+        <div class="login-btn">
+          <el-button type="warning" round @click="navTo('user')">
+            {{ $t('base.member') }}
+          </el-button>
+        </div>
+      </div>
+      <div v-else>
         <div class="login-btn">
           <el-button type="warning" round @click="navTo('login')">
             {{ $t('home.login') }}
@@ -107,7 +114,7 @@ export default {
     CountTo,
   },
   computed: {
-    ...mapGetters(['language', 'mobile']),
+    ...mapGetters(['language', 'mobile', 'token']),
     viewMore() {
       return [
         {

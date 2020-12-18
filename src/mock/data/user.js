@@ -1,29 +1,36 @@
 import newMock from '../new-mock'
+import { param2Obj } from '../utils'
 
 export default {
-  'api/user.get': () => user(),
-  'api-login.post': () => login(),
+  'api/user.get': response => user(response),
+  'api-login.post': response => login(response),
   'agreement.get': () => agreement(),
 }
 
-function user() {
-  return newMock({
-    'data|10': [
-      {
-        createdTime: '@datetime',
-        name: '@cname',
-        region: '@region',
-        avatar: '@image',
-        'images|3': ['@image'],
+function user(response) {
+  const { data } = param2Obj(response.url)
+  if (data === 'token') {
+    return newMock({
+      data: {
+        name: 'Angelina Jolie',
+        avatar:
+          'https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1760455784,274818819&fm=26&gp=0.jpg',
       },
-    ],
-  })
+    })
+  } else {
+    return newMock({}, { code: 403 })
+  }
 }
 
-function login() {
-  return newMock({
-    data: 'token',
-  })
+function login(response) {
+  const data = JSON.parse(response.body)
+  if (data.username === 'guest' && data.password === '123456') {
+    return newMock({
+      data: 'token',
+    })
+  } else {
+    return newMock({}, { message: 'User is not found or invalid password.' })
+  }
 }
 
 function agreement() {

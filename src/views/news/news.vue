@@ -1,15 +1,15 @@
 <template>
   <div class="main-container">
-    <div class="product">
+    <div class="news" :class="mobile ? '' : 'news-desktop'">
       <div v-for="(item, index) in list" :key="index" class="item">
         <el-image
-          style="width: 90%; height: 200px"
+          style="width: 150px; height: 150px"
           :src="item.images[0]"
           fit="fill"
         ></el-image>
         <div class="detail">
           <div class="name">{{ item.name }}</div>
-          <div>{{ item.avatar }}</div>
+          <div>{{ item.avatar + item.avatar + item.avatar + item.avatar }}</div>
           <div>{{ item.createdTime }}</div>
         </div>
       </div>
@@ -28,7 +28,11 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  computed: {
+    ...mapGetters(['mobile']),
+  },
   data() {
     return {
       currentPage: 1,
@@ -53,15 +57,22 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.product {
-  width: 100%;
+.news-desktop {
+  width: 60%;
+  margin: 0 auto;
+}
+.news {
+  padding: 20px;
   .item {
     display: grid;
-    grid-template-columns: 30% 70%;
-    width: 80%;
-    padding: 20px 10%;
-    .name {
-      margin: 10px 0;
+    grid-template-columns: 150px 1fr;
+    margin: 20px auto;
+    .detail {
+      margin-left: 20px;
+      word-break: break-all;
+      .name {
+        margin: 10px 0;
+      }
     }
   }
 }

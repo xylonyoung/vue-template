@@ -40,6 +40,7 @@ export default {
     delete: 'Delete',
     exceptions: 'Exceptions',
     status: 'Status',
+    member:'Member'
   },
   login: {
     signIn: 'Sign In',

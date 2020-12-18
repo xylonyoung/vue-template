@@ -49,7 +49,7 @@ const routes = [
     component: Layout,
     children: [
       {
-        path: '/user',
+        path: '/',
         name: 'User',
         component: () => import('@/views/user/user'),
       },

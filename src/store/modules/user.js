@@ -43,6 +43,8 @@ const actions = {
           const { data } = response
           commit('SET_TOKEN', data)
           localStorage.setItem('token', data)
+          //set token expire date
+          localStorage.setItem('expired', new Date().getTime() + 1000 * 60 * 60 * 24 * 30)
           resolve()
         })
         .catch(error => {
@@ -68,8 +70,10 @@ const actions = {
   },
 
   // user logout
-  logout() {
+  logout({ commit }) {
     return new Promise(resolve => {
+      commit('SET_USER', {})
+      commit('SET_TOKEN', null)
       localStorage.removeItem('token')
       resolve()
     })

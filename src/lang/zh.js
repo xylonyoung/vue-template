@@ -40,6 +40,7 @@ export default {
     delete: '删除',
     exceptions: '免责条款',
     status: '状态',
+    member:'会员中心'
   },
   login: {
     signIn: '账号登录',

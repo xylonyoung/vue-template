@@ -1,9 +1,9 @@
 <template>
   <div class="main-container">
-    <div class="product">
+    <div class="product" :class="mobile ? '' : 'product-grid'">
       <div v-for="(item, index) in list" :key="index" class="item">
         <el-image
-          style="width: 90%; height: 300px"
+          style="width: 250px; height: 200px"
           :src="item.images[0]"
           fit="fill"
         ></el-image>
@@ -24,7 +24,11 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  computed: {
+    ...mapGetters(['mobile']),
+  },
   data() {
     return {
       currentPage: 1,
@@ -49,10 +53,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.product {
+.product-grid {
   display: grid;
   grid-template-columns: repeat(4, 25%);
   place-items: center;
+}
+.product {
   width: 100%;
   .item {
     width: 100%;

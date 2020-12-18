@@ -1,9 +1,13 @@
 import router from './router'
 import store from './store'
 import { needLoginPaths } from './settings'
-import { Message } from 'element-ui'
 
-store.commit('user/SET_TOKEN', localStorage.getItem('token'))
+//check token expired or not
+;(function getToken() {
+  if (localStorage.getItem('expired') > new Date().getTime()) {
+    store.commit('user/SET_TOKEN', localStorage.getItem('token'))
+  }
+})()
 
 router.beforeEach(async (to, from, next) => {
   const token = store.getters.token
@@ -12,19 +16,11 @@ router.beforeEach(async (to, from, next) => {
       // if is logged in, redirect to the home page
       next('/')
     } else {
-      try {
-        next()
+      if (!store.getters.user.name) {
         // get user info
         await store.dispatch('user/getInfo')
-
-        // set the replace: true, so the navigation will not leave a history record
-        next({ ...to, replace: true })
-      } catch (error) {
-        // remove token and go to login page to re-login
-        await store.dispatch('user/logout')
-        Message.error(error || 'Has Error')
-        next('/login')
       }
+      next()
     }
   } else {
     /* has no token*/
