@@ -10,10 +10,6 @@ const routes = [
     component: () => import('@/views/error-page/404'),
   },
   {
-    path: '/401',
-    component: () => import('@/views/error-page/401'),
-  },
-  {
     path: '/agreement',
     component: () => import('@/views/agreement/agreement'),
   },

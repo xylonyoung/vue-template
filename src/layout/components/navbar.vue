@@ -6,12 +6,14 @@
       style="font-size: 30px"
       @click="drawer = true"
     ></i>
-    <el-image
-      :src="require('@/assets/long-logo.png')"
-      fit="contain"
-      :style="logoStyle"
-    ></el-image>
-    <div class="nav-list" v-show="!mobile">
+    <router-link to="/" style="display: flex; align-items: center">
+      <el-image
+        :src="require('@/assets/long-logo.png')"
+        fit="contain"
+        :style="logoStyle"
+      ></el-image>
+    </router-link>
+    <div class="nav-list" v-if="!mobile">
       <el-menu
         :default-active="activeIndex"
         mode="horizontal"

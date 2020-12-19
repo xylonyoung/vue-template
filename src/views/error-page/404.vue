@@ -1,6 +1,6 @@
 <template>
   <div class="page404">
-    <img :src="require('@/assets/404/404.jpg')" />
+    <img :src="require('@/assets/404/404.png')" />
     <div class="sorry">
       <p>咦~页面不见了~</p>
       <p>Oops~Page not found~</p>
