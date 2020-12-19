@@ -1,7 +1,7 @@
 <template>
   <div class="layout-container">
     <header v-if="hideHeader"><navbar /></header>
-    <main>
+    <main :style="{ width: mainWidth }">
       <keep-alive :max="10">
         <transition name="fade">
           <router-view :key="key" />
@@ -17,37 +17,17 @@
 import Navbar from './components/navbar'
 import NavFooter from './components/footer'
 import { hideHeaderPaths } from '@/settings'
+import { mapGetters } from 'vuex'
 export default {
   name: 'Layout',
   components: { Navbar, NavFooter },
   computed: {
+    ...mapGetters(['mainWidth']),
     key() {
       return this.$route.path
     },
     hideHeader() {
       return !hideHeaderPaths.includes(this.$route.path)
-    },
-  },
-  beforeMount() {
-    window.addEventListener('resize', this.resizeHandler)
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.resizeHandler)
-  },
-  watch: {
-    $route: {
-      handler() {
-        this.resizeHandler()
-      },
-      deep: true,
-    },
-  },
-  mounted() {
-    this.resizeHandler()
-  },
-  methods: {
-    resizeHandler() {
-      this.$store.dispatch('app/resize', this)
     },
   },
 }
@@ -61,7 +41,7 @@ export default {
   footer {
     margin-top: auto;
   }
-  .main-container {
+  main {
     margin: 0 auto;
     overflow: hidden;
   }

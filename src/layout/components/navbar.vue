@@ -55,7 +55,7 @@ export default {
   computed: {
     ...mapGetters(['mobile', 'user']),
     activeIndex() {
-      return this.pages.findIndex(e => e.link === location.pathname).toString()
+      return this.pages.findIndex(e => e.link === this.$route.path).toString()
     },
     pages() {
       let arr = [

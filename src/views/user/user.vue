@@ -1,32 +1,30 @@
 <template>
   <div class="user-wrapper">
-    <div class="main-container">
-      <div class="user">
-        <div class="left">
-          <el-image :src="user.avatar" fit="cover"></el-image>
-          <div class="name">{{ user.name }}</div>
-          <div class="user-id">ID:{{ user.userId }}</div>
-          <div
-            v-for="(item, index) in userMenu"
-            :key="index"
-            class="menu"
-            @click="menuHandler(item)"
-          >
-            <el-button type="warning" round v-if="item.name === activeMenu">
-              {{ item.label }}
-            </el-button>
-            <el-button v-else type="text">{{ item.label }}</el-button>
-          </div>
+    <div class="user" :style="{ width: userWidth }">
+      <div class="left">
+        <el-image :src="user.avatar" fit="cover"></el-image>
+        <div class="name">{{ user.name }}</div>
+        <div class="user-id">ID:{{ user.userId }}</div>
+        <div
+          v-for="(item, index) in userMenu"
+          :key="index"
+          class="menu"
+          @click="menuHandler(item)"
+        >
+          <el-button type="warning" round v-if="item.name === activeMenu">
+            {{ item.label }}
+          </el-button>
+          <el-button v-else type="text">{{ item.label }}</el-button>
         </div>
-        <div class="right">
-          <user-track v-show="activeMenu === 'track'" />
-          <user-quote v-show="activeMenu === 'quote'" />
-          <user-setting v-show="activeMenu === 'setting'" />
-          <user-ship v-show="activeMenu === 'ship'" />
-          <user-get-package v-show="activeMenu === 'getPackage'" />
-          <user-reservation v-show="activeMenu === 'reservation'" />
-          <user-my-package v-show="activeMenu === 'myPackage'" />
-        </div>
+      </div>
+      <div class="right">
+        <user-track v-show="activeMenu === 'track'" />
+        <user-quote v-show="activeMenu === 'quote'" />
+        <user-setting v-show="activeMenu === 'setting'" />
+        <user-ship v-show="activeMenu === 'ship'" />
+        <user-get-package v-show="activeMenu === 'getPackage'" />
+        <user-reservation v-show="activeMenu === 'reservation'" />
+        <user-my-package v-show="activeMenu === 'myPackage'" />
       </div>
     </div>
   </div>
@@ -40,6 +38,7 @@ import UserReservation from './reservation.vue'
 import UserSetting from './setting.vue'
 import UserShip from './ship.vue'
 import UserTrack from './track.vue'
+import { desktopPx } from '@/settings'
 export default {
   components: {
     UserTrack,
@@ -51,7 +50,10 @@ export default {
     UserMyPackage,
   },
   computed: {
-    ...mapGetters(['user']),
+    ...mapGetters(['user', 'mobile']),
+    userWidth() {
+      return this.isMobile ? '100%' : desktopPx * 0.8 + 'px'
+    },
     userMenu() {
       return [
         'track',
@@ -76,7 +78,7 @@ export default {
   methods: {
     menuHandler(item) {
       if (item.name === 'logout') {
-        this.$store.dispatch('user/logout').then(()=>{
+        this.$store.dispatch('user/logout').then(() => {
           this.$router.push('/')
         })
       } else {
@@ -88,15 +90,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .user-wrapper {
-  display: flex;
-  justify-content: center;
-  min-height: calc(100vh - 190px);
+  padding: 30px 0;
+  min-height: calc(100vh - 250px);
   background-color: #f5f5f5;
 }
 .user {
   display: flex;
-  width: 80%;
-  margin: 30px auto;
+  margin: 0 auto;
   background-color: #fff;
   border-top: 3px solid #ffc702;
   .left {

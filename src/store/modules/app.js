@@ -1,9 +1,9 @@
 import { getLanguage } from '@/lang/index'
-import { resizePx,mobilePx } from '@/settings'
 
 const state = {
   mobile: false,
   language: getLanguage(),
+  mainWidth: 0,
 }
 
 const mutations = {
@@ -14,27 +14,14 @@ const mutations = {
     state.language = language
     localStorage.setItem('language', language)
   },
+  SET_MAIN_WIDTH: (state, width) => {
+    state.mainWidth = width
+  },
 }
 
 const actions = {
   setLanguage({ commit }, language) {
     commit('SET_LANGUAGE', language)
-  },
-  resize({ commit }, _this) {
-    const isMobile = document.documentElement.clientWidth < mobilePx
-    const container = document.getElementsByClassName('main-container')
-    commit('MOBILE_DEVICE', isMobile)
-    _this.$nextTick(() => {
-      if (isMobile) {
-        container.forEach(e => {
-          e.style.width = '100%'
-        })
-      } else {
-        container.forEach(e => {
-          e.style.width = resizePx + 'px'
-        })
-      }
-    })
   },
 }
 

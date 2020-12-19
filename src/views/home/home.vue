@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div>
     <el-carousel :height="mobile ? '150px' : '300px'">
       <el-carousel-item v-for="item in 3" :key="item">
         <el-image

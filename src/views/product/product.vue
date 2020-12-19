@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div>
     <div class="product" :class="mobile ? '' : 'product-grid'">
       <div v-for="(item, index) in list" :key="index" class="item">
         <el-image

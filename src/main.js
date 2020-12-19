@@ -7,6 +7,7 @@ import './style/element-variables.scss'
 import i18n from './lang' // internationalization
 import './permission' // permission control
 import './style/index.scss' // global css
+import resize from './utils/resize'
 import vueUse from './utils/vue-install'
 
 Vue.use(Element, {
@@ -25,5 +26,6 @@ new Vue({
   router,
   store,
   i18n,
+  mixins: [resize],
   render: h => h(App),
 }).$mount('#app')
