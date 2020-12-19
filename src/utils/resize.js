@@ -1,4 +1,4 @@
-import { desktopPx, mobilePx, unResizePaths } from '@/settings'
+import { mainWidth, mobilePx, unResizePaths } from '@/settings'
 export default {
   data() {
     return {
@@ -29,7 +29,7 @@ export default {
       this.$store.commit('app/MOBILE_DEVICE', isMobile)
       this.$store.commit(
         'app/SET_MAIN_WIDTH',
-        isMobile || unResizePaths.includes(this.$route.path) ? '100%' : `${desktopPx}px`
+        isMobile || unResizePaths.includes(this.$route.path) ? '100%' : `${mainWidth}px`
       )
 
       let baseWidth = 720,

@@ -3,7 +3,7 @@
     <img :src="require('@/assets/404/404.jpg')" />
     <div class="sorry">
       <p>咦~页面不见了~</p>
-      <p>Oops~Page missing~</p>
+      <p>Oops~Page not found~</p>
     </div>
     <p class="goto"><a href="/">返回首页 Back to home</a></p>
   </div>

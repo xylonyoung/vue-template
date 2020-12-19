@@ -38,7 +38,7 @@ import UserReservation from './reservation.vue'
 import UserSetting from './setting.vue'
 import UserShip from './ship.vue'
 import UserTrack from './track.vue'
-import { desktopPx } from '@/settings'
+import { mainWidth } from '@/settings'
 export default {
   components: {
     UserTrack,
@@ -52,7 +52,7 @@ export default {
   computed: {
     ...mapGetters(['user', 'mobile']),
     userWidth() {
-      return this.isMobile ? '100%' : desktopPx * 0.8 + 'px'
+      return this.isMobile ? '100%' : mainWidth * 0.8 + 'px'
     },
     userMenu() {
       return [
