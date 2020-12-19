@@ -18,6 +18,10 @@ const routes = [
     component: () => import('@/views/exceptions/exceptions'),
   },
   {
+    path: '/map',
+    component: () => import('@/views/map/map'),
+  },
+  {
     path: '/',
     component: Layout,
     children: [
@@ -39,7 +43,6 @@ const routes = [
       },
     ],
   },
-
   {
     path: '/user',
     component: Layout,
