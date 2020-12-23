@@ -59,7 +59,7 @@ export default {
         return color(i)
       })
       .attr('d', path)
-    // .attr('opacity', 0.6)
+      .attr('opacity', 0.6)
     // .on('mouseover', function () {
     //   d3.select(this).attr('opacity', 1)
     // })
@@ -70,7 +70,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-#d3map {
-  margin: 0 auto;
-}
 </style>
