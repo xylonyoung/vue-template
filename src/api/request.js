@@ -53,15 +53,20 @@ service.interceptors.response.use(
   error => {
     console.log(error.response) // for debug
 
-    Message({
-      message: '系统繁忙，请稍后重试！',
-      type: 'error',
-      duration: 5 * 1000
-    })
     //user token error
     if (error.response.status === 403) {
+      Message({
+        message: '登录过期，请重新登录！',
+        type: 'warning',
+        duration: 5 * 1000
+      })
       store.dispatch('user/logout')
     } else {
+      Message({
+        message: '系统繁忙，请稍后重试！',
+        type: 'error',
+        duration: 5 * 1000
+      })
       return Promise.reject(error)
     }
   }
