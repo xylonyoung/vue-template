@@ -48,19 +48,19 @@
 <script>
 export default {
   props: {
-    dialogVisible: { type: Boolean, default: false },
+    dialogVisible: { type: Boolean, default: false }
   },
   data() {
     return {
       ruleForm: {
-        name: '',
+        name: ''
       },
       rules: {
         name: [
           { required: true, message: '请输入活动名称', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' },
-        ],
-      },
+          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+        ]
+      }
     }
   },
   methods: {
@@ -73,8 +73,8 @@ export default {
           return false
         }
       })
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

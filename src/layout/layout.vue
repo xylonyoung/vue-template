@@ -24,8 +24,8 @@ export default {
     ...mapGetters(['mainWidth', 'mobile']),
     key() {
       return this.$route.path.split('/')[1]
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -85,7 +85,7 @@ export default {
   data() {
     return { activeName: '' }
   },
-  methods: {},
+  methods: {}
 }
 </script>
 <style lang="scss" scoped>

@@ -11,7 +11,7 @@ import resize from './utils/resize'
 import vueUse from './utils/vue-install'
 
 Vue.use(Element, {
-  i18n: (key, value) => i18n.t(key, value),
+  i18n: (key, value) => i18n.t(key, value)
 })
 
 //set global functions, variables, components, etc.
@@ -29,5 +29,5 @@ new Vue({
   store,
   i18n,
   mixins: [resize],
-  render: h => h(App),
+  render: h => h(App)
 }).$mount('#app')

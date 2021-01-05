@@ -75,12 +75,12 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['language']),
+    ...mapGetters(['language'])
   },
   data() {
     return {
       ruleForm: { packages: [[]] },
-      rules: {},
+      rules: {}
     }
   },
   methods: {
@@ -99,8 +99,8 @@ export default {
     },
     handleDelete(index) {
       this.ruleForm.packages.splice(index, 1)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

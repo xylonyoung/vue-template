@@ -3,24 +3,24 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es6: true
   },
-  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
+  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
   parserOptions: {
-    parser: "babel-eslint",
-    sourceType: 'module',
+    parser: 'babel-eslint',
+    sourceType: 'module'
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-     //强制使用单引号
-     quotes: [
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    //强制使用单引号
+    quotes: [
       'error',
       'single',
       {
         avoidEscape: true,
-        allowTemplateLiterals: true,
-      },
+        allowTemplateLiterals: true
+      }
     ],
     'no-unused-vars': ['error', { args: 'none' }],
     'vue/max-attributes-per-line': 'off',
@@ -31,20 +31,20 @@ module.exports = {
       {
         semi: false,
         singleQuote: true,
-        trailingComma: 'all',
-        arrowParens: 'avoid',
-      },
-    ],
+        trailingComma: 'none',
+        arrowParens: 'avoid'
+      }
+    ]
   },
   overrides: [
     {
       files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)'
       ],
       env: {
         jest: true
       }
     }
   ]
-};
+}

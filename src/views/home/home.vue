@@ -142,25 +142,25 @@ export default {
         {
           name: '注册会员',
           title: '获得您的专属转运地址',
-          img: require('@/assets/home/register.png'),
+          img: require('@/assets/home/register.png')
         },
         {
           name: '海外网站购物',
           title: '签收货物，商品安全迅速到达您手中',
-          img: require('@/assets/home/shopping.png'),
+          img: require('@/assets/home/shopping.png')
         },
         {
           name: '等待收货',
           title: '签收货物，商品安全迅速到达您手中',
-          img: require('@/assets/home/sign.png'),
+          img: require('@/assets/home/sign.png')
         },
         {
           name: '转运网站操作',
           title: '提交运单 包裹发往国内 ',
-          img: require('@/assets/home/transshipment.png'),
-        },
+          img: require('@/assets/home/transshipment.png')
+        }
       ]
-    },
+    }
   },
   data() {
     return {
@@ -170,8 +170,8 @@ export default {
         { name: 'Amazon', link: 'https://www.amazon.com/' },
         { name: 'Apple', link: 'https://www.apple.com/' },
         { name: 'Bing', link: 'https://www.bing.com/' },
-        { name: '百度', link: 'https://www.baidu.com/' },
-      ],
+        { name: '百度', link: 'https://www.baidu.com/' }
+      ]
     }
   },
   methods: {
@@ -180,14 +180,14 @@ export default {
         this.$router.push({
           path: 'login',
           query: {
-            active: 'register',
-          },
+            active: 'register'
+          }
         })
       } else {
         this.$router.push(link)
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

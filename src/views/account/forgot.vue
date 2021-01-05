@@ -56,18 +56,18 @@ export default {
           {
             required: true,
             message: this.$t('login.username'),
-            trigger: 'blur',
-          },
+            trigger: 'blur'
+          }
         ],
         password: [
           {
             required: true,
             message: this.$t('login.password'),
-            trigger: 'blur',
-          },
-        ],
+            trigger: 'blur'
+          }
+        ]
       },
-      fileList: [],
+      fileList: []
     }
   },
   methods: {
@@ -80,8 +80,8 @@ export default {
           return false
         }
       })
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped></style>

@@ -62,19 +62,19 @@ export default {
         {
           name: '张三李四',
           phone: '12345678901',
-          address: '中国 广东省 江门市 江海区 高新西路清澜路33号',
+          address: '中国 广东省 江门市 江海区 高新西路清澜路33号'
         },
         {
           name: '张三李四',
           phone: '12345678901',
-          address: '中国 广东省 江门市 江海区 高新西路清澜路33号',
+          address: '中国 广东省 江门市 江海区 高新西路清澜路33号'
         },
         {
           name: '张三李四',
           phone: '12345678901',
-          address: '中国 广东省 江门市 江海区 高新西路清澜路33号',
-        },
-      ],
+          address: '中国 广东省 江门市 江海区 高新西路清澜路33号'
+        }
+      ]
     }
   },
   methods: {
@@ -89,8 +89,8 @@ export default {
     },
     handleDelete(index) {
       this.ruleForm.packages.splice(index, 1)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

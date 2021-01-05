@@ -7,7 +7,7 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['language']),
+    ...mapGetters(['language'])
   },
   data() {
     return { content: '' }
@@ -22,7 +22,7 @@ export default {
         this.content = data[this.language] || data.zh
       }
     })
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>

@@ -7,7 +7,7 @@ import { baseURL } from '@/settings'
 const service = axios.create({
   baseURL: baseURL, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000, // request timeout
+  timeout: 5000 // request timeout
 })
 
 // request interceptor
@@ -23,7 +23,7 @@ service.interceptors.request.use(
     // do something with request error
     console.log(error) // for debug
     return Promise.reject(error)
-  },
+  }
 )
 // response interceptor
 service.interceptors.response.use(
@@ -46,7 +46,7 @@ service.interceptors.response.use(
       Message({
         message: res.message,
         type: 'error',
-        duration: 5 * 1000,
+        duration: 5 * 1000
       })
     }
   },
@@ -56,7 +56,7 @@ service.interceptors.response.use(
     Message({
       message: '系统繁忙，请稍后重试！',
       type: 'error',
-      duration: 5 * 1000,
+      duration: 5 * 1000
     })
     //user token error
     if (error.response.status === 403) {
@@ -64,7 +64,7 @@ service.interceptors.response.use(
     } else {
       return Promise.reject(error)
     }
-  },
+  }
 )
 
 export default service

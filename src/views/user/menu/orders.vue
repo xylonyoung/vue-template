@@ -121,24 +121,24 @@ export default {
       options: [
         {
           value: '选项1',
-          label: '黄金糕',
+          label: '黄金糕'
         },
         {
           value: '选项2',
-          label: '双皮奶',
+          label: '双皮奶'
         },
         {
           value: '选项3',
-          label: '蚵仔煎',
+          label: '蚵仔煎'
         },
         {
           value: '选项4',
-          label: '龙须面',
+          label: '龙须面'
         },
         {
           value: '选项5',
-          label: '北京烤鸭',
-        },
+          label: '北京烤鸭'
+        }
       ],
       value: '',
       list: [
@@ -153,7 +153,7 @@ export default {
           netWeight: 0,
           freightJP: 3168,
           freight: 203.6,
-          status: '已发货',
+          status: '已发货'
         },
         {
           name: '陈周丹',
@@ -166,11 +166,11 @@ export default {
           netWeight: 0,
           freightJP: 3168,
           freight: 203.6,
-          status: '未发货',
-        },
-      ],
+          status: '未发货'
+        }
+      ]
     }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>

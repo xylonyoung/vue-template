@@ -12,7 +12,9 @@
     <div class="detail-center">
       <i class="el-icon-location-outline center-icon"></i>
       <div class="center-location">
-        <div>日文地址：東京都板橋区板橋４-４-３白鳩Ｍ３Ｆ（株）大啓商事 VNIKAI</div>
+        <div>
+          日文地址：東京都板橋区板橋４-４-３白鳩Ｍ３Ｆ（株）大啓商事 VNIKAI
+        </div>
         <div>
           英文地址：VNIKAI,Daikeishouji Co., Ltd Shirohato Manshon#3F,4-4-3
           Itabashi,Itabashi-ku,Tokyo，Japan
@@ -37,25 +39,43 @@
     </div>
     <div class="detail-bottom">
       <div class="bottom-title">日本购物网站收货地址填写参考：</div>
-      <el-form inline :model="formData" :rules="rules" ref="ruleForm" label-width="150px">
+      <el-form
+        inline
+        :model="formData"
+        :rules="rules"
+        ref="ruleForm"
+        label-width="150px"
+      >
         <div class="form-grid">
           <el-form-item label="姓：">
-            <el-input v-model="formData.name" placeholder="可写汉字或拼音"></el-input>
+            <el-input
+              v-model="formData.name"
+              placeholder="可写汉字或拼音"
+            ></el-input>
           </el-form-item>
           <el-form-item label="名：">
-            <el-input v-model="formData.name" placeholder="可写汉字或拼音"></el-input>
+            <el-input
+              v-model="formData.name"
+              placeholder="可写汉字或拼音"
+            ></el-input>
           </el-form-item>
         </div>
         <div class="form-grid">
           <el-form-item label="セ イ（日文姓）：">
             <div class="item-flex">
-              <el-input v-model="formData.name" placeholder="请用“中译日”转换"></el-input>
+              <el-input
+                v-model="formData.name"
+                placeholder="请用“中译日”转换"
+              ></el-input>
               <el-button type="text" class="item-margin">中译日</el-button>
             </div>
           </el-form-item>
           <el-form-item label="メ イ（日文名）：">
             <div class="item-flex">
-              <el-input v-model="formData.name" placeholder="请用“中译日”转换"></el-input>
+              <el-input
+                v-model="formData.name"
+                placeholder="请用“中译日”转换"
+              ></el-input>
               <el-button type="text" class="item-margin">中译日</el-button>
             </div>
           </el-form-item>
@@ -121,7 +141,7 @@ export default {
   data() {
     return {
       formData: {},
-      rules: {},
+      rules: {}
     }
   },
   methods: {
@@ -134,8 +154,8 @@ export default {
           return false
         }
       })
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

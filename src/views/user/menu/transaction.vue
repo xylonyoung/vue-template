@@ -116,9 +116,9 @@ export default {
           status: '已完成',
           amount: -213.77,
           actions:
-            '本次支付：订单2012412消费21人民币、消费积分***，支付后余额是0元人民币',
-        },
-      ],
+            '本次支付：订单2012412消费21人民币、消费积分***，支付后余额是0元人民币'
+        }
+      ]
     }
   },
   methods: {
@@ -130,8 +130,8 @@ export default {
     },
     handleClick(tab, event) {
       console.log(tab, event)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

@@ -96,7 +96,7 @@ export default {
           comments: '22',
           days: '22',
           fee: '22',
-          status: '已入库',
+          status: '已入库'
         },
         {
           time: '2020-2-2',
@@ -106,7 +106,7 @@ export default {
           comments: '22',
           days: '22',
           fee: '22',
-          status: '已入库',
+          status: '已入库'
         },
         {
           time: '2020-2-2',
@@ -116,13 +116,13 @@ export default {
           comments: '22',
           days: '22',
           fee: '22',
-          status: '已入库',
-        },
+          status: '已入库'
+        }
       ],
       radio: '',
-      num: 1,
+      num: 1
     }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>

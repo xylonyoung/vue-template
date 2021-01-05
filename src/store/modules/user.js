@@ -2,7 +2,7 @@ import $api from '@/api'
 
 const state = {
   token: null,
-  user: {},
+  user: {}
 }
 
 const mutations = {
@@ -11,7 +11,7 @@ const mutations = {
   },
   SET_USER: (state, user) => {
     state.user = user
-  },
+  }
 }
 
 const actions = {
@@ -34,7 +34,7 @@ const actions = {
           //set token expire date
           localStorage.setItem(
             'expired',
-            new Date().getTime() + 1000 * 60 * 60 * 24 * 30,
+            new Date().getTime() + 1000 * 60 * 60 * 24 * 30
           )
           resolve()
         })
@@ -68,11 +68,11 @@ const actions = {
       localStorage.removeItem('token')
       resolve()
     })
-  },
+  }
 }
 export default {
   namespaced: true,
   state,
   mutations,
-  actions,
+  actions
 }

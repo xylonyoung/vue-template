@@ -45,9 +45,9 @@
 export default {
   data() {
     return {
-      list: [{ name: '50044j', time: '1990-11-23', point: 500 }],
+      list: [{ name: '50044j', time: '1990-11-23', point: 500 }]
     }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>

@@ -67,16 +67,16 @@ export default {
         { name: '关于我们', link: '/about-us' },
         { name: '联系我们', link: '/contact' },
         { name: '签收需知', link: '/ship' },
-        { name: '服务协议', link: '/product' },
+        { name: '服务协议', link: '/product' }
       ]
-    },
+    }
   },
 
   methods: {
     navTo(link) {
       this.$router.push(link)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

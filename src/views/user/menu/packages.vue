@@ -232,29 +232,29 @@ export default {
       list: [
         { name: '鞋子', quantity: 3, price: 3 },
         { name: '鞋子', quantity: 3, price: 3 },
-        { name: '鞋子', quantity: 3, price: 3 },
+        { name: '鞋子', quantity: 3, price: 3 }
       ],
       options: [
         {
           value: '选项1',
-          label: '黄金糕',
+          label: '黄金糕'
         },
         {
           value: '选项2',
-          label: '双皮奶',
+          label: '双皮奶'
         },
         {
           value: '选项3',
-          label: '蚵仔煎',
+          label: '蚵仔煎'
         },
         {
           value: '选项4',
-          label: '龙须面',
+          label: '龙须面'
         },
         {
           value: '选项5',
-          label: '北京烤鸭',
-        },
+          label: '北京烤鸭'
+        }
       ],
       value: '',
       checked: true,
@@ -262,19 +262,19 @@ export default {
         {
           name: '张三李四',
           phone: '12345678901',
-          address: '中国 广东省 江门市 江海区 高新西路清澜路33号',
+          address: '中国 广东省 江门市 江海区 高新西路清澜路33号'
         },
         {
           name: '张三李四',
           phone: '12345678901',
-          address: '中国 广东省 江门市 江海区 高新西路清澜路33号',
+          address: '中国 广东省 江门市 江海区 高新西路清澜路33号'
         },
         {
           name: '张三李四',
           phone: '12345678901',
-          address: '中国 广东省 江门市 江海区 高新西路清澜路33号',
-        },
-      ],
+          address: '中国 广东省 江门市 江海区 高新西路清澜路33号'
+        }
+      ]
     }
   },
   methods: {
@@ -289,8 +289,8 @@ export default {
     },
     handleDelete(index) {
       this.ruleForm.packages.splice(index, 1)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

@@ -184,7 +184,7 @@ export default {
       return [
         { name: '未提交', icon: '5' },
         { name: '即将超时', icon: '6' },
-        { name: '超期包裹', icon: '7' },
+        { name: '超期包裹', icon: '7' }
       ]
     },
     orderRemind() {
@@ -192,7 +192,7 @@ export default {
         { name: '处理中', icon: '8' },
         { name: '未付款', icon: '9' },
         { name: '超期订单', icon: '10' },
-        { name: '发出订单', icon: '11' },
+        { name: '发出订单', icon: '11' }
       ]
     },
     // containerStyle() {
@@ -223,7 +223,7 @@ export default {
         { name: '自营已发货', total: 5 },
         { name: '已签收', total: 5 },
         { name: '国内已发货', total: 5 },
-        { name: '问题件', total: 5 },
+        { name: '问题件', total: 5 }
       ]
     },
     userMenu() {
@@ -234,26 +234,26 @@ export default {
             { name: '包裹预报', link: 'reservation' },
             { name: '提交发货', link: 'consignment' },
             { name: '包裹列表', link: 'packages' },
-            { name: '订单列表', link: 'orders' },
-          ],
+            { name: '订单列表', link: 'orders' }
+          ]
         },
         {
           title: '地址管理',
           children: [
             { name: '仓库地址', link: 'warehouse' },
-            { name: '收货地址', link: 'address' },
-          ],
+            { name: '收货地址', link: 'address' }
+          ]
         },
         {
           title: '增值服务',
-          children: [{ name: '货到付款', link: 'cash-on-delivery' }],
+          children: [{ name: '货到付款', link: 'cash-on-delivery' }]
         },
         {
           title: '推广奖励',
           children: [
             { name: '推广奖励', link: 'bonus' },
-            { name: '我的晒单', link: '' },
-          ],
+            { name: '我的晒单', link: '' }
+          ]
         },
         {
           title: '账号管理',
@@ -261,35 +261,35 @@ export default {
             { name: '交易管理', link: 'transaction' },
             { name: '账号设置', link: 'settings' },
             { name: '修改密码', link: 'password' },
-            { name: '退出', link: 'logout' },
-          ],
+            { name: '退出', link: 'logout' }
+          ]
         },
         {
           title: '商品代购',
           children: [
             { name: '起航代购', link: '' },
-            { name: '代购订单', link: '' },
-          ],
-        },
+            { name: '代购订单', link: '' }
+          ]
+        }
       ]
     },
     defaultOpens() {
       return this.userMenu.map((e, i) => i.toString())
-    },
+    }
   },
   watch: {
     $route: {
       handler: function() {
         this.findActiveIndex()
       },
-      deep: true,
-    },
+      deep: true
+    }
   },
   data() {
     return {
       mainWidth,
       dialogVisible: false,
-      activeIndex: '1',
+      activeIndex: '1'
     }
   },
   mounted() {
@@ -304,7 +304,7 @@ export default {
             if (i.link === arr[2]) {
               return (this.activeIndex = index + '-' + eIndex)
             }
-          }),
+          })
         )
       } else {
         this.activeIndex = ''
@@ -326,8 +326,8 @@ export default {
       } else {
         this.$router.push('/user/' + link)
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

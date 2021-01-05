@@ -6,5 +6,5 @@ module.exports = {
       args[0].title = title
       return args
     })
-  },
+  }
 }

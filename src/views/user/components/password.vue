@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       formData: {},
-      rules: {},
+      rules: {}
     }
   },
   methods: {
@@ -36,8 +36,8 @@ export default {
           return false
         }
       })
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

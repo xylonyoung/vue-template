@@ -48,7 +48,7 @@ export default {
     return {
       dialogImageUrl: '',
       dialogVisible: false,
-      disabled: false,
+      disabled: false
     }
   },
   methods: {
@@ -61,8 +61,8 @@ export default {
     },
     handleDownload(file) {
       console.log(file)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

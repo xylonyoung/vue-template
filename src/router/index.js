@@ -7,11 +7,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/404',
-    component: () => import('@/views/error-page/404'),
+    component: () => import('@/views/error-page/404')
   },
   {
     path: '/agreement',
-    component: () => import('@/views/agreement/agreement'),
+    component: () => import('@/views/agreement/agreement')
   },
   {
     path: '/',
@@ -20,9 +20,9 @@ const routes = [
       {
         path: '',
         name: 'Home',
-        component: () => import('@/views/home/home'),
-      },
-    ],
+        component: () => import('@/views/home/home')
+      }
+    ]
   },
   {
     path: '',
@@ -31,19 +31,19 @@ const routes = [
       {
         path: '/account/login',
         name: 'Login',
-        component: () => import('@/views/account/login'),
+        component: () => import('@/views/account/login')
       },
       {
         path: '/account/register',
         name: 'Register',
-        component: () => import('@/views/account/register'),
+        component: () => import('@/views/account/register')
       },
       {
         path: '/account/forgot',
         name: 'Forgot',
-        component: () => import('@/views/account/forgot'),
-      },
-    ],
+        component: () => import('@/views/account/forgot')
+      }
+    ]
   },
   {
     path: '/user',
@@ -57,71 +57,71 @@ const routes = [
           {
             path: '/user/reservation',
             name: 'Reservation',
-            component: () => import('@/views/user/menu/reservation'),
+            component: () => import('@/views/user/menu/reservation')
           },
           {
             path: '/user/consignment',
             name: 'Consignment',
-            component: () => import('@/views/user/menu/consignment'),
+            component: () => import('@/views/user/menu/consignment')
           },
           {
             path: '/user/packages',
             name: 'Packages',
-            component: () => import('@/views/user/menu/packages'),
+            component: () => import('@/views/user/menu/packages')
           },
           {
             path: '/user/orders',
             name: 'Orders',
-            component: () => import('@/views/user/menu/orders'),
+            component: () => import('@/views/user/menu/orders')
           },
           {
             path: '/user/warehouse',
             name: 'Warehouse',
-            component: () => import('@/views/user/menu/warehouse'),
+            component: () => import('@/views/user/menu/warehouse')
           },
           {
             path: '/user/address',
             name: 'Address',
-            component: () => import('@/views/user/menu/address'),
+            component: () => import('@/views/user/menu/address')
           },
           {
             path: '/user/cash-on-delivery',
             name: 'CashOnDelivery',
-            component: () => import('@/views/user/menu/cash-on-delivery'),
+            component: () => import('@/views/user/menu/cash-on-delivery')
           },
           {
             path: '/user/bonus',
             name: 'Bonus',
-            component: () => import('@/views/user/menu/bonus'),
+            component: () => import('@/views/user/menu/bonus')
           },
           {
             path: '/user/transaction',
             name: 'Transaction',
-            component: () => import('@/views/user/menu/transaction'),
+            component: () => import('@/views/user/menu/transaction')
           },
           {
             path: '/user/settings',
             name: 'Settings',
-            component: () => import('@/views/user/menu/settings'),
+            component: () => import('@/views/user/menu/settings')
           },
           {
             path: '/user/password',
             name: 'Password',
-            component: () => import('@/views/user/components/password'),
-          },
-        ],
-      },
-    ],
+            component: () => import('@/views/user/components/password')
+          }
+        ]
+      }
+    ]
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404' },
+  { path: '*', redirect: '/404' }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes,
+  routes
 })
 
 export default router

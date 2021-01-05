@@ -9,14 +9,14 @@ export default {
   props: {
     name: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   computed: {
     iconName() {
       return `#icon-${this.name}`
-    },
-  },
+    }
+  }
 }
 </script>
 <style type="text/css">

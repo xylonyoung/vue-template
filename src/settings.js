@@ -6,5 +6,5 @@ module.exports = {
   mainWidth: '1226',
   // mainWidth unused paths
   unResizePaths: ['/login', '/user'],
-  needLoginPaths: ['/user'],
+  needLoginPaths: ['/user']
 }

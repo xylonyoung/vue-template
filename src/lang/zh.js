@@ -41,7 +41,7 @@ export default {
     exceptions: '免责条款',
     status: '状态',
     member: '会员中心',
-    phone: '手机号码',
+    phone: '手机号码'
   },
   login: {
     signIn: '账号登录',
@@ -53,7 +53,7 @@ export default {
     confirmPassword: '请再次输入密码',
     login: '返回登录',
     forgot: '忘记密码？',
-    register: '立即注册',
+    register: '立即注册'
   },
   navbar: {
     home: '首页',
@@ -62,7 +62,7 @@ export default {
     product: '产品推荐',
     news: '集运动态',
     partner: '合作商家',
-    contact: '联系我们',
+    contact: '联系我们'
   },
   home: {
     login: '会员登录',
@@ -76,7 +76,7 @@ export default {
     quote: '运费估算',
     service: '在线客服',
     hotSale: '热销产品推荐',
-    partnership: '合作商家',
+    partnership: '合作商家'
   },
   userMenu: {
     track: '包裹查询',
@@ -86,6 +86,6 @@ export default {
     getPackage: '包裹认领',
     reservation: '包裹预报',
     myPackage: '我的包裹',
-    logout: '退出登录',
-  },
+    logout: '退出登录'
+  }
 }

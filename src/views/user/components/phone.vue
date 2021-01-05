@@ -45,8 +45,8 @@ export default {
       verificationCode: '',
       formData: {},
       rules: {
-        code: [{ validator: validateCode, trigger: 'blur' }],
-      },
+        code: [{ validator: validateCode, trigger: 'blur' }]
+      }
     }
   },
   created() {
@@ -65,8 +65,8 @@ export default {
           return false
         }
       })
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

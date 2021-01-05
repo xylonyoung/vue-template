@@ -2,7 +2,7 @@ import { mainWidth, unResizePaths } from '@/settings'
 export default {
   data() {
     return {
-      resizeEvt: 'orientationchange' in window ? 'orientationchange' : 'resize',
+      resizeEvt: 'orientationchange' in window ? 'orientationchange' : 'resize'
     }
   },
   beforeMount() {
@@ -16,8 +16,8 @@ export default {
       handler() {
         this.resizeHandler()
       },
-      deep: true,
-    },
+      deep: true
+    }
   },
   mounted() {
     try {
@@ -38,7 +38,7 @@ export default {
         'app/SET_MAIN_WIDTH',
         isMobile || unResizePaths.some(e => this.$route.path.includes(e))
           ? '100%'
-          : `${mainWidth}px`,
+          : `${mainWidth}px`
       )
 
       let baseWidth = 720,
@@ -48,6 +48,6 @@ export default {
         clientWidth = 720
       }
       document.documentElement.style.fontSize = clientWidth / grids + 'px'
-    },
-  },
+    }
+  }
 }

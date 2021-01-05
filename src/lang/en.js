@@ -41,7 +41,7 @@ export default {
     exceptions: 'Exceptions',
     status: 'Status',
     member: 'Member',
-    phone: 'Phone',
+    phone: 'Phone'
   },
   login: {
     signIn: 'Sign In',
@@ -54,7 +54,7 @@ export default {
     confirm: 'Sign In',
     login: 'Back to Sign In',
     forgot: 'Forgot password?',
-    register: 'Create account',
+    register: 'Create account'
   },
   navbar: {
     home: 'Home',
@@ -63,7 +63,7 @@ export default {
     product: 'Products',
     news: 'News',
     partner: 'Partner',
-    contact: 'Contact',
+    contact: 'Contact'
   },
   home: {
     login: 'Login',
@@ -77,7 +77,7 @@ export default {
     quote: 'Get Quote',
     service: 'Customer Service',
     hotSale: 'Hot Sale',
-    partnership: 'Partnerships',
+    partnership: 'Partnerships'
   },
   userMenu: {
     track: 'Track Package',
@@ -87,6 +87,6 @@ export default {
     getPackage: 'Get Packages',
     reservation: 'Reservation',
     myPackage: 'My Packages',
-    logout: 'Logout',
-  },
+    logout: 'Logout'
+  }
 }

@@ -1,11 +1,16 @@
 <template>
-  <div class="navbar-container" :class="mobile ? 'navbar-container-mobile' : ''">
+  <div
+    class="navbar-container"
+    :class="mobile ? 'navbar-container-mobile' : ''"
+  >
     <div class="navbar-top">
-      <div class="marquee"><marquee-tips :content="marqueeContent" :speed="10" /></div>
+      <div class="marquee"></div>
       <div class="navbar-top-btn">
         <template v-if="!user.name">
           <router-link to="/account/login">登录</router-link>
-          <router-link to="/account/register" class="line-between">注册</router-link>
+          <router-link to="/account/register" class="line-between">
+            注册
+          </router-link>
         </template>
         <el-button type="text"><lang-selector /></el-button>
         <el-button type="primary" size="mini">
@@ -30,7 +35,11 @@
         ></el-image>
       </router-link>
       <div class="nav-list" v-if="!mobile">
-        <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
+        <el-menu
+          :default-active="activeIndex"
+          mode="horizontal"
+          @select="handleSelect"
+        >
           <el-menu-item
             :index="index.toString()"
             v-for="(item, index) in pages"
@@ -62,9 +71,8 @@
 <script>
 import { mapGetters } from 'vuex'
 import LangSelector from '@/components/lang-selector/lang-selector.vue'
-import MarqueeTips from 'vue-marquee-tips'
 export default {
-  components: { LangSelector, MarqueeTips },
+  components: { LangSelector },
   computed: {
     ...mapGetters(['mobile', 'user']),
     activeIndex() {
@@ -80,7 +88,7 @@ export default {
         { name: '日淘教程', link: '/news' },
         { name: '日淘晒单', link: '/partner' },
         { name: '网站公告', link: '/news' },
-        { name: '帮助中心', link: '/contact' },
+        { name: '帮助中心', link: '/contact' }
       ]
     },
     logoStyle() {
@@ -89,20 +97,20 @@ export default {
       } else {
         return 'width: 200px; height: 60px'
       }
-    },
+    }
   },
   data() {
     return {
       drawer: false,
-      marqueeContent: '欢迎来到起航转运！当前汇率:0.06614',
+      marqueeContent: '欢迎来到起航转运！当前汇率:0.06614'
     }
   },
   methods: {
     handleSelect(key, keyPath) {
       this.drawer = false
       this.$router.push(this.pages[key].link)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

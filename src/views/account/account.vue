@@ -28,7 +28,7 @@ export default {
     ...mapGetters(['language', 'mobile']),
     key() {
       return this.$route.path
-    },
+    }
   },
   watch: {
     mobile: {
@@ -39,13 +39,13 @@ export default {
             e.style.position = val ? 'static' : 'absolute'
           })
         })
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       centerImg:
-        'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ad3f9d5a5a8b0e5fe17efb74cc80028.jpg',
+        'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ad3f9d5a5a8b0e5fe17efb74cc80028.jpg'
     }
   },
   methods: {
@@ -62,8 +62,8 @@ export default {
           return false
         }
       })
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

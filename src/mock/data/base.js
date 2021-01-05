@@ -2,7 +2,7 @@ import createMock from '../index'
 import { param2Obj } from '../utils'
 
 export default {
-  'list.get': response => createList(response),
+  'list.get': response => createList(response)
 }
 
 function createList(response) {
@@ -19,14 +19,14 @@ function createList(response) {
         name: '@cname',
         region: '@region',
         avatar: '@image',
-        'images|3': ['@image'],
-      },
+        'images|3': ['@image']
+      }
     ],
     paginator: {
       current: params.page,
       next: params.next,
       endPage: params.endPage,
-      totalCount: 30,
-    },
+      totalCount: 30
+    }
   })
 }
