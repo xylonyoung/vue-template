@@ -3,7 +3,7 @@ import createMock from '../index'
 export default {
   'api/user.get': response => user(response),
   'api-login.post': response => login(response),
-  'agreement.get': () => agreement()
+  'api/contents/by-title/agreement.get': () => agreement()
 }
 
 function user(response) {

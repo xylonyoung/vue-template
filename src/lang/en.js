@@ -43,18 +43,26 @@ export default {
     member: 'Member',
     phone: 'Phone'
   },
-  login: {
+  account: {
     signIn: 'Sign In',
     signUp: 'Sign Up',
+    toLogin: 'Back to Sign In',
+    forgot: 'Forgot password?',
+    register: 'Create account',
     resetPassword: 'Reset Password',
     username: 'Account',
     password: 'Password',
     newPassword: 'New Password',
     confirmPassword: 'Confirm Password',
+    notMatch: 'Confirm Password Do Not Match',
     confirm: 'Sign In',
-    login: 'Back to Sign In',
-    forgot: 'Forgot password?',
-    register: 'Create account'
+    phone: 'Mobile Phone number',
+    email: 'Email Address',
+    verificationCode: 'Verification Code',
+    sendCode: 'Send Code',
+    agreement: "I've read and agreed to User Agreement",
+    submit: 'Submit',
+    success: 'Success'
   },
   navbar: {
     home: 'Home',
@@ -64,29 +72,5 @@ export default {
     news: 'News',
     partner: 'Partner',
     contact: 'Contact'
-  },
-  home: {
-    login: 'Login',
-    register: 'Register',
-    packages: 'Total Packages',
-    cooperation: 'Cooperative Companies',
-    projects: 'Successful Projects',
-    viewMore: 'View More',
-    ocean: 'Ocean Shipping',
-    air: 'Air Shipping',
-    quote: 'Get Quote',
-    service: 'Customer Service',
-    hotSale: 'Hot Sale',
-    partnership: 'Partnerships'
-  },
-  userMenu: {
-    track: 'Track Package',
-    quote: 'Get A Quote',
-    setting: 'Setting',
-    ship: 'Ship Now',
-    getPackage: 'Get Packages',
-    reservation: 'Reservation',
-    myPackage: 'My Packages',
-    logout: 'Logout'
   }
 }

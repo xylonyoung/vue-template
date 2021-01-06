@@ -14,7 +14,7 @@ export default {
   },
   created() {
     const { lang } = this.$route.query
-    this.$api.agreement.get().then(res => {
+    this.$api.get('api/contents/by-title/agreement').then(res => {
       const { data } = res
       if (lang) {
         this.content = data[lang]

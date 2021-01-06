@@ -19,10 +19,6 @@ export default {
     name: '姓名',
     wechat: '微信',
     email: '邮箱',
-    australiaPhone: '澳洲手机号码',
-    australiaId: '澳洲身份证ID',
-    australiaAddress: '澳洲地址',
-    australiaAddressee: '澳洲收件人',
     queryType: '查询类型',
     trackingNumber: '快递单号',
     detailedAddress: '详细地址',
@@ -43,17 +39,25 @@ export default {
     member: '会员中心',
     phone: '手机号码'
   },
-  login: {
+  account: {
     signIn: '账号登录',
     signUp: '账号注册',
+    toLogin: '返回登录',
+    forgot: '忘记密码？',
+    register: '立即注册',
     resetPassword: '重置密码',
     username: '请输入账号',
     password: '请输入密码',
     newPassword: '请输入新密码',
     confirmPassword: '请再次输入密码',
-    login: '返回登录',
-    forgot: '忘记密码？',
-    register: '立即注册'
+    notMatch: '两次输入密码不一致',
+    phone: '请输入手机号码',
+    email: '请输入邮箱',
+    verificationCode: '请输入验证码',
+    sendCode: '发送验证码',
+    agreement: '已阅读并同意：用户协议',
+    submit: '确定',
+    success: '成功'
   },
   navbar: {
     home: '首页',
@@ -63,29 +67,5 @@ export default {
     news: '集运动态',
     partner: '合作商家',
     contact: '联系我们'
-  },
-  home: {
-    login: '会员登录',
-    register: '注册账号',
-    packages: '累计运送',
-    cooperation: '合作企业',
-    projects: '成功项目',
-    viewMore: '点击查看',
-    ocean: '超值海运流程',
-    air: '空运流程',
-    quote: '运费估算',
-    service: '在线客服',
-    hotSale: '热销产品推荐',
-    partnership: '合作商家'
-  },
-  userMenu: {
-    track: '包裹查询',
-    quote: '运费评估',
-    setting: '个人设置',
-    ship: '申请邮寄',
-    getPackage: '包裹认领',
-    reservation: '包裹预报',
-    myPackage: '我的包裹',
-    logout: '退出登录'
   }
 }

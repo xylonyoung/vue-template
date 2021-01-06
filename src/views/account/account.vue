@@ -12,7 +12,13 @@
     </transition>
 
     <div class="center-img">
-      <el-image :src="centerImg" fit="contain" />
+      <video
+        autoplay
+        muted
+        :src="centerVideo"
+        v-if="background === 'video'"
+      ></video>
+      <el-image :src="centerImg" fit="contain" v-else />
     </div>
 
     <nav-footer v-if="!mobile" class="footer" />
@@ -44,8 +50,11 @@ export default {
   },
   data() {
     return {
+      background: 'video',
       centerImg:
-        'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ad3f9d5a5a8b0e5fe17efb74cc80028.jpg'
+        'https://www.apple.com/v/iphone-12/e/images/overview/hero/hero_endframe__fc7apyu3c7au_large.jpg',
+      centerVideo:
+        'https://www.apple.com/105/media/us/iphone-12/2020/7f5b7de7-9f8c-41eb-bf3b-f294773108e6/anim/hero/large.mp4'
     }
   },
   methods: {
@@ -99,6 +108,14 @@ export default {
   width: 100%;
   height: calc(100vh - 290px);
   top: 100px;
+  background-color: #f1eff1;
+  video {
+    height: 100%;
+  }
+  .el-image {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 ::v-deep .account-form {

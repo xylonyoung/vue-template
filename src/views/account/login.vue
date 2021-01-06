@@ -1,22 +1,23 @@
 <template>
   <div class="account-form">
-    <div class="title">{{ $t('login.signIn') }}</div>
+    <div class="title">{{ $t('account.signIn') }}</div>
     <el-form
       ref="loginForm"
       :rules="rules"
       :model="loginForm"
       hide-required-asterisk
+      @keyup.enter.native="onSubmit('loginForm')"
     >
       <el-form-item label="" prop="username">
         <el-input
           v-model="loginForm.username"
-          :placeholder="$t('login.username')"
+          :placeholder="$t('account.username')"
         ></el-input>
       </el-form-item>
       <el-form-item label="" prop="password">
         <el-input
           v-model="loginForm.password"
-          :placeholder="$t('login.password')"
+          :placeholder="$t('account.password')"
           show-password
         ></el-input>
       </el-form-item>
@@ -28,9 +29,9 @@
     </div>
     <div class="account">
       <router-link to="/account/register">{{
-        $t('login.register')
+        $t('account.register')
       }}</router-link>
-      <router-link to="/account/forgot">{{ $t('login.forgot') }}</router-link>
+      <router-link to="/account/forgot">{{ $t('account.forgot') }}</router-link>
     </div>
   </div>
 </template>
@@ -43,14 +44,14 @@ export default {
         username: [
           {
             required: true,
-            message: this.$t('login.username'),
+            message: this.$t('account.username'),
             trigger: 'blur'
           }
         ],
         password: [
           {
             required: true,
-            message: this.$t('login.password'),
+            message: this.$t('account.password'),
             trigger: 'blur'
           }
         ]
