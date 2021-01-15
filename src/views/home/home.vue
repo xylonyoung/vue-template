@@ -81,12 +81,8 @@
           <div class="item-img" :class="index === 0 ? 'item-img-detail' : ''">
             <div class="img-detail" v-if="index === 0">
               <div class="detail-title">{{ item.name }}</div>
-              <div>
-                {{ item.name }}
-              </div>
-              <div>
-                {{ item.name }}
-              </div>
+              <div>{{ item.name }}</div>
+              <div>{{ item.name }}</div>
             </div>
             <el-image :src="item.img" fit="fill"></el-image>
           </div>
@@ -123,8 +119,7 @@
           :key="index"
           :href="item.link"
           target="_blank"
-        >
-          {{ item.name }}
+          >{{ item.name }}
         </a>
       </div>
     </div>

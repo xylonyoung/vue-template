@@ -1,4 +1,4 @@
-export default function _() {
+export default function() {
   function getRandomNum() {
     const min = 0,
       max = 9

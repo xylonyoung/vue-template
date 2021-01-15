@@ -1,4 +1,4 @@
-export default function getValue(obj, key) {
+function getValue(obj, key) {
   if (!obj) {
     return null
   }
@@ -19,3 +19,5 @@ export default function getValue(obj, key) {
     return getValue(obj[key[0]], key.slice(1))
   }
 }
+
+module.exports = getValue

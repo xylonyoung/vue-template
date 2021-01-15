@@ -1,4 +1,4 @@
-import getValue from '@/utils/get-value.js'
+const getValue = require('../js/get-value.js')
 
 const obj = { a: { b: { c: { d: { e: { f: 'f' } } } } } },
   arr = [[[3]]],
