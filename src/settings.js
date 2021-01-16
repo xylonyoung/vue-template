@@ -1,5 +1,5 @@
 module.exports = {
-  baseURL: process.env.NODE_ENV === 'development' ? 'https://mockjs' : '',
+  baseURL: '' || 'https://mockjs',
   // website title
   title: 'Vue Template',
   // layout main's width

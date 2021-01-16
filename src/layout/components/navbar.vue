@@ -6,7 +6,7 @@
     <div class="navbar-top">
       <div class="marquee"></div>
       <div class="navbar-top-btn">
-        <template v-if="!user.name">
+        <template v-if="!token">
           <router-link to="/account/login">登录</router-link>
           <router-link to="/account/register" class="line-between">
             注册
@@ -74,7 +74,7 @@ import LangSelector from '@/components/lang-selector/lang-selector.vue'
 export default {
   components: { LangSelector },
   computed: {
-    ...mapGetters(['mobile', 'user']),
+    ...mapGetters(['mobile', 'token']),
     activeIndex() {
       return this.pages.findIndex(e => e.link === this.$route.path).toString()
     },

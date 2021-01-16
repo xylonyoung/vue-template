@@ -20,13 +20,6 @@ export default {
     }
   },
   mounted() {
-    try {
-      window.console &&
-        window.console.log &&
-        console.log('%c🌈🌻🌼‍', 'font-size:50px;')
-    } catch (e) {
-      console.log(e)
-    }
     this.resizeHandler()
   },
   methods: {

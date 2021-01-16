@@ -9,6 +9,7 @@ import './permission' // permission control
 import './style/index.scss' // global css
 import resize from './utils/resize'
 import vueUse from './utils/vue-install'
+import { baseURL } from './settings'
 
 Vue.use(Element, {
   i18n: (key, value) => i18n.t(key, value)
@@ -18,8 +19,17 @@ Vue.use(Element, {
 Vue.use(vueUse)
 
 // mock for fake data
-if (process.env.NODE_ENV === 'development') {
+let consoleStr = '🌈🌻🌼'
+if (process.env.NODE_ENV === 'development' && baseURL === 'https://mockjs') {
+  consoleStr += 'mock'
   require('./mock')
+}
+try {
+  window.console &&
+    window.console.log &&
+    console.log('%c' + consoleStr, 'font-size:50px;')
+} catch (e) {
+  console.log(e)
 }
 
 Vue.config.productionTip = false

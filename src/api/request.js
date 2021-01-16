@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { Message } from 'element-ui'
 import store from '@/store'
+import { Message } from 'element-ui'
 import { baseURL } from '@/settings'
 
 // create an axios instance
@@ -54,7 +54,7 @@ service.interceptors.response.use(
     console.log(error.response) // for debug
 
     //user token error
-    if (error.response.status === 403) {
+    if (error.response && error.response.status === 403) {
       Message({
         message: '登录过期，请重新登录！',
         type: 'warning',
