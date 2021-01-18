@@ -8,7 +8,7 @@ import i18n from './lang' // internationalization
 import './permission' // permission control
 import './style/index.scss' // global css
 import resize from './utils/resize'
-import vueUse from './utils/vue-install'
+import vueUse from './utils/vue-use'
 import { baseURL } from './settings'
 
 Vue.use(Element, {

@@ -1,4 +1,5 @@
 module.exports = {
+  // input baseURL value will be disable mock
   baseURL: '' || 'https://mockjs',
   // website title
   title: 'Vue Template',

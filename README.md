@@ -1,5 +1,17 @@
-# vue-test
+# vue-template
 
+## 配置
+- ### Settings.js
+  ```
+  项目的各项设置。
+  
+  - baseURL 填入服务器后，自动关闭mock。
+  ```
+- ### icons
+  ```
+  使用symbol引用，只需替换iconfont.js
+  ```
+  [iconfont使用帮助](https://www.iconfont.cn/help/detail?helptype=code)
 ## Project setup
 ```
 yarn install
