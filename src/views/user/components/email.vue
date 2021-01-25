@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import getCode from '@/utils/verification-code'
+import getCode from '@/temp/utils/verification-code'
 export default {
   data() {
     let validateCode = (rule, value, callback) => {

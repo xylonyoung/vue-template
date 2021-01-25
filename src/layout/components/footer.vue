@@ -39,7 +39,7 @@
           <div class="qrcode-img" v-for="(item, index) in 3" :key="index">
             <el-image
               style="width: 90px; height: 90px"
-              :src="require('@/assets/temp/qrcode.png')"
+              :src="require('@/temp/assets/qrcode.png')"
               fit="cover"
             ></el-image>
           </div>

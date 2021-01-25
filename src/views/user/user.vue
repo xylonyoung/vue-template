@@ -89,7 +89,7 @@
                       v-for="(item, index) in [1, 2, 3, 4]"
                       :key="index"
                       fit="contain"
-                      :src="require(`@/assets/user/${item}.png`)"
+                      :src="require(`@/temp/assets/user/${item}.png`)"
                     />
                   </div>
                 </div>
@@ -125,7 +125,7 @@
                       <div class="icon-img">
                         <el-image
                           fit="contain"
-                          :src="require(`@/assets/user/${item.icon}.png`)"
+                          :src="require(`@/temp/assets/user/${item.icon}.png`)"
                         />
                       </div>
                     </el-badge>
@@ -145,7 +145,7 @@
                       <div class="icon-img">
                         <el-image
                           fit="contain"
-                          :src="require(`@/assets/user/${item.icon}.png`)"
+                          :src="require(`@/temp/assets/user/${item.icon}.png`)"
                         />
                       </div>
                     </el-badge>

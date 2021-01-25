@@ -4,7 +4,7 @@
       <el-image
         fit="contain"
         style="width: 30px; height: 20px"
-        :src="require('@/assets/temp/jp.png')"
+        :src="require('@/temp/assets/user/jp.png')"
       ></el-image>
       <span>日本邮政仓库</span>
       <span>(在日本网站购物时，请使用以下地址)</span>

@@ -3,7 +3,7 @@
     <el-carousel>
       <el-carousel-item v-for="item in 3" :key="item">
         <el-image
-          :src="require('@/assets/temp/carousel.png')"
+          :src="require('@/temp/assets/home/carousel.png')"
           fit="fit"
           style="width: 100%; height: 100%"
         ></el-image>
@@ -103,7 +103,7 @@
             class="img-item"
           >
             <el-image
-              :src="require('@/assets/temp/' + item)"
+              :src="require('@/temp/assets/home/' + item)"
               fit="cover"
             ></el-image>
           </div>
@@ -137,22 +137,22 @@ export default {
         {
           name: '注册会员',
           title: '获得您的专属转运地址',
-          img: require('@/assets/home/register.png')
+          img: require('@/temp/assets/home/register.png')
         },
         {
           name: '海外网站购物',
           title: '签收货物，商品安全迅速到达您手中',
-          img: require('@/assets/home/shopping.png')
+          img: require('@/temp/assets/home/shopping.png')
         },
         {
           name: '等待收货',
           title: '签收货物，商品安全迅速到达您手中',
-          img: require('@/assets/home/sign.png')
+          img: require('@/temp/assets/home/sign.png')
         },
         {
           name: '转运网站操作',
           title: '提交运单 包裹发往国内 ',
-          img: require('@/assets/home/transshipment.png')
+          img: require('@/temp/assets/home/transshipment.png')
         }
       ]
     }
