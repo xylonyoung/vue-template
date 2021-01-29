@@ -1,5 +1,5 @@
 import $api from '@/api'
-import getValue from './get-value'
+import getValue from 'get-value'
 import icon from '@/icons'
 
 export default {
